@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Loans for Nurses NSW | Healthcare Finance | Bang On Investments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #E8732A; --orange-dark: #C95E1A; --dark: #1C1C1E;
+      --text: #333333; --muted: #666666; --light-bg: #F8F7F5;
+      --border: #E0E0E0; --footer-bg: #252527; --white: #ffffff;
+    }
+    body { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: var(--text); line-height: 1.7; }
+
+    /* NAV */
+    nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 52px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 500; padding: 8px 12px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--orange); background: rgba(232,115,42,0.06); }
+    .nav-links .nav-has-arrow::after { content: ' \25BE'; font-size: 10px; opacity: 0.6; }
+    .nav-dropdown { position: relative; }
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: var(--white); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 8px 28px rgba(0,0,0,0.11); padding: 6px 0; z-index: 200; }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 16px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none; transition: background 0.15s, color 0.15s; background: none; border-radius: 0; }
+    .dropdown-menu a:hover { background: rgba(232,115,42,0.06); color: var(--orange); }
+    .dropdown-menu a::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background 0.15s; }
+    .dropdown-menu a:hover::before { background: var(--orange); }
+    .dropdown-menu a.active { color: var(--orange); font-weight: 600; }
+    .dropdown-menu a.active::before { background: var(--orange); }
+
+    /* HERO */
+    .hero { position: relative; min-height: 520px; background: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1400&q=80') center 30% / cover no-repeat; display: flex; align-items: center; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(15,15,15,0.85) 0%, rgba(15,15,15,0.55) 60%, rgba(15,15,15,0.30) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 1200px; width: 100%; margin: 0 auto; padding: 80px 24px; }
+    .hero-eyebrow { display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+    .hero h1 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(28px, 4.5vw, 52px); color: var(--white); line-height: 1.1; max-width: 680px; margin-bottom: 20px; }
+    .hero-sub { font-size: clamp(15px, 2vw, 17px); color: rgba(255,255,255,0.82); max-width: 540px; margin-bottom: 32px; line-height: 1.65; }
+
+    /* SHARED */
+    .section-h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(22px, 3vw, 32px); color: var(--dark); line-height: 1.2; }
+    .section-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: block; }
+
+    /* BUTTONS */
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .cta-buttons.centered { justify-content: center; }
+    .btn-call { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14.5px; padding: 13px 28px; border-radius: 4px; text-decoration: none; letter-spacing: 0.2px; box-shadow: 0 3px 10px rgba(232,115,42,0.30); transition: background 0.2s, transform 0.15s, box-shadow 0.2s; }
+    .btn-call:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(232,115,42,0.38); }
+    .btn-contact { display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--dark); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14.5px; padding: 12px 28px; border-radius: 4px; border: 2px solid var(--dark); text-decoration: none; letter-spacing: 0.2px; transition: background 0.2s, color 0.2s, transform 0.15s; }
+    .btn-contact:hover { background: var(--dark); color: var(--white); transform: translateY(-2px); }
+    .btn-contact-hero { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14.5px; padding: 12px 28px; border-radius: 4px; border: 2px solid rgba(255,255,255,0.55); text-decoration: none; letter-spacing: 0.2px; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+    .btn-contact-hero:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.9); transform: translateY(-2px); }
+    .btn-dark { display: inline-flex; align-items: center; gap: 8px; background: var(--dark); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14.5px; padding: 13px 32px; border-radius: 4px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-dark:hover { background: #000; transform: translateY(-2px); }
+
+    /* INTRO */
+    .intro { background: var(--white); padding: 80px 24px; }
+    .service-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 64px; align-items: center; }
+    .service-body .section-h2 { margin-bottom: 20px; }
+    .service-body p { font-size: 15.5px; color: var(--text); line-height: 1.75; margin-bottom: 16px; }
+    .service-body a { color: var(--orange); text-decoration: none; font-weight: 600; }
+    .service-body a:hover { text-decoration: underline; }
+    .service-image img { width: 100%; height: 420px; object-fit: cover; border-radius: 6px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); display: block; }
+
+    /* PULL QUOTE */
+    .pull-quote { padding: 56px 24px; }
+    .pull-quote.bg-light { background: var(--light-bg); }
+    .pull-quote.bg-white { background: var(--white); }
+    .pull-quote-inner { max-width: 820px; margin: 0 auto; border-left: 4px solid var(--orange); padding-left: 32px; }
+    .pull-quote.alt .pull-quote-inner { border-left-color: var(--dark); }
+    .pull-quote-inner blockquote { font-family: 'Montserrat', sans-serif; font-size: clamp(16px, 2.2vw, 20px); font-weight: 500; font-style: italic; color: var(--dark); line-height: 1.55; margin-bottom: 16px; }
+    .pull-quote-inner cite { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: var(--orange); font-style: normal; letter-spacing: 0.5px; text-transform: uppercase; }
+    .pull-quote.alt .pull-quote-inner cite { color: var(--dark); }
+
+    /* OFFER CARDS */
+    .what-we-offer { background: var(--light-bg); padding: 80px 24px; }
+    .offer-header { max-width: 1200px; margin: 0 auto 40px; }
+    .offer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .offer-card { background: var(--white); border-radius: 8px; padding: 36px 32px; border: 1px solid var(--border); border-top: 3px solid var(--orange); transition: box-shadow 0.2s, transform 0.2s; }
+    .offer-card:hover { box-shadow: 0 8px 28px rgba(232,115,42,0.10); transform: translateY(-3px); }
+    .offer-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 17px; color: var(--dark); margin-bottom: 14px; line-height: 1.3; }
+    .offer-card p { font-size: 15px; color: var(--text); line-height: 1.75; margin-bottom: 20px; }
+    .offer-card-cta { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: var(--orange); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .offer-card-cta:hover { color: var(--orange-dark); }
+
+    /* FAQs */
+    .faqs { background: var(--white); padding: 80px 24px; }
+    .faqs-inner { max-width: 860px; margin: 0 auto; }
+    .faqs-inner .section-h2 { margin-bottom: 40px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item input[type="checkbox"] { display: none; }
+    .faq-item label { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 15.5px; color: var(--dark); user-select: none; }
+    .faq-item label::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--orange); flex-shrink: 0; line-height: 1; }
+    .faq-item input:checked ~ label::after { content: '\2212'; }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item input:checked ~ .faq-body { max-height: 400px; }
+    .faq-body p { padding: 0 0 20px; font-size: 15px; color: var(--muted); line-height: 1.75; }
+
+    /* FINAL CTA */
+    .final-cta { background: var(--orange); padding: 72px 24px; }
+    .final-cta-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+    .final-cta h2 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(24px, 4vw, 36px); color: var(--white); line-height: 1.15; margin-bottom: 14px; }
+    .final-cta p { font-size: 16px; color: rgba(255,255,255,0.88); margin-bottom: 8px; line-height: 1.65; }
+    .final-cta .phone-line { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+    .final-cta .phone-line a { color: var(--white); text-decoration: none; }
+    .final-cta .phone-line a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { background: var(--footer-bg); padding: 20px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.5); }
+    .footer-legal { font-size: 12.5px; color: rgba(255,255,255,0.5); display: flex; gap: 16px; align-items: center; }
+    .footer-legal a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-legal a:hover { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="https://www.bangoninvestments.com.au/wp-content/uploads/2022/06/bang-on-investments-logo-main.png" alt="Bang On Investments">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="nav-has-arrow">Information</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-has-arrow">Our Services</a>
+        <div class="dropdown-menu">
+          <a href="home-loans.html">Home Loans</a>
+          <a href="investment-loans.html">Investment Loans</a>
+          <a href="business-loans.html">Business Loans</a>
+          <a href="vehicle-loans.html">Vehicle Loans</a>
+          <a href="medical-loans.html">Medical Professionals</a>
+          <a href="refinancing.html">Refinancing</a>
+          <a href="commercial-property-loans.html">Commercial Property Loans</a>
+          <a href="self-employed-home-loans.html">Self-Employed Home Loans</a>
+          <a href="home-loans-for-nurses.html" class="active">Home Loans for Nurses</a>
+        </div>
+      </li>
+      <li><a href="#" class="nav-has-arrow">Tools</a></li>
+      <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Home Loans for Nurses</span>
+    <h1>Home Loans for Nurses NSW</h1>
+    <p class="hero-sub">Nurses deserve a home loan that recognises the full value of what they earn including shift allowances, overtime and penalties. We work with lenders who get it.</p>
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-call">Get a Free Assessment</a>
+      <a href="tel:+61414406887" class="btn-contact-hero">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="service-grid">
+    <div class="service-body">
+      <span class="section-label">Nursing Income Specialists</span>
+      <h2 class="section-h2">A Home Loan That Understands Nursing Income</h2>
+      <p>Nursing income can look complicated on paper. Shift allowances, overtime, casual loading, penalty rates and multiple employers can make standard lender assessments frustrating. Many nurses are surprised to find their borrowing capacity is lower than expected, simply because a lender does not know how to assess their income correctly.</p>
+      <p>At Bang On Investments, we work with lenders who understand how nurses earn and who are willing to include allowances and overtime in their income assessment. This can make a meaningful difference to your borrowing capacity and the <a href="home-loans.html">home loan</a> you can access.</p>
+      <p>Shift allowances and overtime can make up 20 to 40% of a nurse's total income in many roles. When a lender ignores this income, your borrowing capacity can be significantly understated. We make sure every dollar you earn is counted where possible.</p>
+      <p>We help nurses across NSW find the right home loan including across Greater Sydney in areas such as Chatswood, North Sydney, Strathfield, Concord and Willoughby, as well as the Southern Highlands where many healthcare workers are making the tree-change to Bowral and surrounds.</p>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+        <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="service-image">
+      <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=840&q=80" alt="Home loans for nurses NSW">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL 1 -->
+<section class="pull-quote bg-light">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang helped make the entire experience feel less painful. Their knowledge was second to none and the customer service was excellent. Highly recommended."</blockquote>
+    <cite>Josh R</cite>
+  </div>
+</section>
+
+<!-- WHAT WE OFFER -->
+<section class="what-we-offer">
+  <div class="offer-header">
+    <span class="section-label">How We Help</span>
+    <h2 class="section-h2">How We Help Nurses Get a Better Home Loan</h2>
+  </div>
+  <div class="offer-grid">
+    <div class="offer-card">
+      <h3>Full Income Assessment Including Allowances and Overtime</h3>
+      <p>We identify lenders who include shift penalties, overtime, casual loading and allowances in their income assessment, not just your base salary. For many nurses, this increases borrowing capacity significantly compared to going directly to a major bank.</p>
+      <a href="tel:+61414406887" class="offer-card-cta">Find out how much you could actually borrow. Call 0414 406 887 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="offer-card">
+      <h3>LMI Concessions for Healthcare Workers</h3>
+      <p>Some lenders extend LMI waivers or reduced LMI premiums to nurses and allied health workers, allowing you to buy with a smaller deposit. Similar to the <a href="medical-loans.html" style="color:var(--orange);font-weight:600;text-decoration:none;">LMI waivers available for doctors</a>, eligibility varies by lender, registration and income level. We will check what is available for your specific situation.</p>
+      <a href="tel:+61414406887" class="offer-card-cta">Check your LMI eligibility. Call 0414 406 887 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="offer-card">
+      <h3>Loans for Casual, Agency and Multi-Employer Nurses</h3>
+      <p>Whether you are permanent, casual, agency-based or working across multiple hospitals, we work with lenders who can assess your income fairly. Casual and agency nurses often have more borrowing options than they realise. The key is presenting the application correctly.</p>
+      <a href="tel:+61414406887" class="offer-card-cta">Not sure if your employment type qualifies? Call 0414 406 887 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="offer-card">
+      <h3>First Home Buyer Guidance</h3>
+      <p>If you are a nurse buying your first home, we will guide you through every step from borrowing capacity to settlement. We will also ensure you access the First Home Owner Grant and any stamp duty concessions you may be eligible for in NSW.</p>
+      <a href="tel:+61414406887" class="offer-card-cta">First home buyer? Call 0414 406 887 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:32px auto 0;">
+    <div class="cta-buttons">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL 2 -->
+<section class="pull-quote bg-white alt">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang and the team were so fantastic to work with. Their positivity and professionalism made for a fantastic process and we felt supported every step of the way."</blockquote>
+    <cite>Xanthe L</cite>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="faqs">
+  <div class="faqs-inner">
+    <span class="section-label">Got Questions?</span>
+    <h2 class="section-h2">Home Loan FAQs for Nurses</h2>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq1">
+      <label for="faq1">Do lenders include shift allowances and overtime in a nurse's income assessment?</label>
+      <div class="faq-body"><p>Not all lenders include shift allowances and overtime, but many do. The key is knowing which lenders are most generous in how they assess nursing income. We match you to lenders who will count your full earnings including allowances and overtime, not just your base salary.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq2">
+      <label for="faq2">Can I use overtime income to qualify for a larger home loan as a nurse?</label>
+      <div class="faq-body"><p>Yes, in many cases. Lenders who specialise in nursing income assessment will include regular overtime and shift allowances when calculating your borrowing capacity. We identify which lenders on our panel are most generous with nursing income and match you accordingly. This can make a meaningful difference to the loan size you can access.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq3">
+      <label for="faq3">Can casual nurses get a home loan in NSW?</label>
+      <div class="faq-body"><p>Yes, though it can be more complex than for permanent employees. Most lenders want to see 12 months of consistent casual income. We work with lenders who are experienced with casual nursing income and can assess your situation fairly.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq4">
+      <label for="faq4">Can nurses get an LMI waiver?</label>
+      <div class="faq-body"><p>Some lenders do extend LMI concessions or waivers to nurses and allied health professionals, though the terms differ from those available to <a href="medical-loans.html" style="color:var(--orange);font-weight:600;">doctors and medical professionals</a>. We will check your eligibility across our lender panel and tell you what is available to you.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq5">
+      <label for="faq5">What is casual loading and does it count toward my home loan income?</label>
+      <div class="faq-body"><p>Casual loading is the additional percentage paid on top of a nurse's base hourly rate to compensate for not receiving paid leave entitlements. It is typically 25% above the base rate. Many lenders will include casual loading as part of your assessable income, particularly if you have been employed casually for 12 months or more. We know which lenders are most flexible with this.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq6">
+      <label for="faq6">I work for multiple hospitals as an agency nurse — can I still get a home loan?</label>
+      <div class="faq-body"><p>Yes. We work with lenders who understand agency and multi-employer income and can assess your combined earnings appropriately. It is more complex to present but we know how to do it.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq7">
+      <label for="faq7">What areas of NSW do you help nurses find home loans?</label>
+      <div class="faq-body"><p>We help nurses across Greater Sydney and NSW including Chatswood, Strathfield, North Sydney, Concord, Willoughby, Pymble, Bowral and surrounding areas. We also work with clients Australia-wide.</p></div>
+    </div>
+
+    <div class="cta-buttons" style="margin-top:36px;">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>You Take Care of Everyone Else. Let Us Take Care of Your Home Loan.</h2>
+    <p>Get in touch for a free, no-obligation assessment. We will review your full income including allowances and overtime and find you the best available home loan for your situation.</p>
+    <p class="phone-line">Call us on <a href="tel:+61414406887">0414 406 887</a></p>
+    <div class="cta-buttons centered">
+      <a href="/contact-us/" class="btn-dark">Get in Touch</a>
+      <a href="tel:+61414406887" class="btn-contact-hero">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 Bang On Investments | All Rights Reserved</span>
+    <div class="footer-legal">
+      <span>Australian Credit Licence No. 394371</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
