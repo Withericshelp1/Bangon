@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Loans Sydney | Property Investment Finance | Bang On Investments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #E8732A;
+      --orange-dark: #C95E1A;
+      --dark: #1C1C1E;
+      --text: #333333;
+      --muted: #666666;
+      --light-bg: #F8F7F5;
+      --border: #E0E0E0;
+      --footer-bg: #252527;
+      --white: #ffffff;
+    }
+
+    body { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: var(--text); line-height: 1.7; }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 52px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); background: rgba(232,115,42,0.06); }
+    .nav-links .nav-has-arrow::after { content: ' \25BE'; font-size: 10px; opacity: 0.6; }
+    .nav-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 230px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+      padding: 6px 0;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      background: none;
+      border-radius: 0;
+    }
+    .dropdown-menu a:hover { background: rgba(232,115,42,0.06); color: var(--orange); }
+    .dropdown-menu a::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .dropdown-menu a:hover::before { background: var(--orange); }
+    .dropdown-menu a.active { color: var(--orange); font-weight: 600; }
+    .dropdown-menu a.active::before { background: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=80') center 50% / cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(15,15,15,0.85) 0%, rgba(15,15,15,0.55) 60%, rgba(15,15,15,0.30) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px, 4.5vw, 52px);
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 680px;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 17px);
+      color: rgba(255,255,255,0.82);
+      max-width: 540px;
+      margin-bottom: 32px;
+      line-height: 1.65;
+    }
+
+    /* ── SHARED ── */
+    .section-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(22px, 3vw, 32px);
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* ── CTA BUTTONS ── */
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .cta-buttons.centered { justify-content: center; }
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 13px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      box-shadow: 0 3px 10px rgba(232,115,42,0.30);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-call:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(232,115,42,0.38); }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: 2px solid var(--dark);
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-contact:hover { background: var(--dark); color: var(--white); transform: translateY(-2px); }
+    .btn-contact-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.55);
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .btn-contact-hero:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.9); transform: translateY(-2px); }
+
+    /* ── INTRO ── */
+    .intro { background: var(--white); padding: 80px 24px; }
+    .service-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+    }
+    .service-grid.reverse { direction: rtl; }
+    .service-grid.reverse > * { direction: ltr; }
+    .service-body .section-h2 { margin-bottom: 20px; }
+    .service-body p {
+      font-size: 15.5px;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .service-image img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      display: block;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote { padding: 56px 24px; }
+    .pull-quote.bg-light { background: var(--light-bg); }
+    .pull-quote.bg-white { background: var(--white); }
+    .pull-quote-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      border-left: 4px solid var(--orange);
+      padding-left: 32px;
+    }
+    .pull-quote-inner blockquote {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(16px, 2.2vw, 20px);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .pull-quote-inner cite {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      font-style: normal;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── WHAT WE OFFER ── */
+    .what-we-offer { background: var(--light-bg); padding: 80px 24px; }
+    .offer-header { max-width: 1200px; margin: 0 auto 40px; }
+    .offer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .offer-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--orange);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .offer-card:hover { box-shadow: 0 8px 28px rgba(232,115,42,0.10); transform: translateY(-3px); }
+    .offer-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--dark);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .offer-card p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .offer-card-cta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .offer-card-cta:hover { color: var(--orange-dark); }
+
+    /* ── SUBURBS ── */
+    .suburbs { background: var(--white); padding: 80px 24px; }
+    .suburbs-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+    }
+    .suburbs-body .section-h2 { margin-bottom: 20px; }
+    .suburbs-body p {
+      font-size: 15.5px;
+      color: var(--text);
+      line-height: 1.75;
+    }
+    .suburbs-image img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      display: block;
+    }
+
+    /* ── FAQs ── */
+    .faqs { background: var(--light-bg); padding: 80px 24px; }
+    .faqs-inner { max-width: 860px; margin: 0 auto; }
+    .faqs-inner .section-h2 { margin-bottom: 40px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item input[type="checkbox"] { display: none; }
+    .faq-item label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15.5px;
+      color: var(--dark);
+      user-select: none;
+    }
+    .faq-item label::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--orange);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .faq-item input:checked ~ label::after { content: '\2212'; }
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-item input:checked ~ .faq-body { max-height: 400px; }
+    .faq-body p {
+      padding: 0 0 20px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta { background: var(--orange); padding: 72px 24px; }
+    .final-cta-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+    .final-cta h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(24px, 4vw, 36px);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .final-cta p { font-size: 16px; color: rgba(255,255,255,0.88); margin-bottom: 8px; line-height: 1.65; }
+    .final-cta .phone-line {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 28px;
+    }
+    .final-cta .phone-line a { color: var(--white); text-decoration: none; }
+    .final-cta .phone-line a:hover { text-decoration: underline; }
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 13px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-dark:hover { background: #000; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--footer-bg); padding: 20px 24px; }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.5); }
+    .footer-legal { font-size: 12.5px; color: rgba(255,255,255,0.5); display: flex; gap: 16px; align-items: center; }
+    .footer-legal a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-legal a:hover { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="https://www.bangoninvestments.com.au/wp-content/uploads/2022/06/bang-on-investments-logo-main.png" alt="Bang On Investments">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="nav-has-arrow">Information</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-has-arrow">Our Services</a>
+        <div class="dropdown-menu">
+          <a href="home-loans.html">Home Loans</a>
+          <a href="investment-loans.html" class="active">Investment Loans</a>
+          <a href="business-loans.html">Business Loans</a>
+          <a href="vehicle-loans.html">Vehicle Loans</a>
+          <a href="medical-loans.html">Medical Professionals</a>
+          <a href="#">Refinancing</a>
+          <a href="#">Commercial Property Loans</a>
+          <a href="#">Self-Employed Home Loans</a>
+          <a href="#">Home Loans for Nurses</a>
+        </div>
+      </li>
+      <li><a href="#" class="nav-has-arrow">Tools</a></li>
+      <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Investment Loans</span>
+    <h1>Investment Property Loans Sydney</h1>
+    <p class="hero-sub">Whether you are buying your first investment property or expanding a portfolio, we structure loans from 25+ lenders to maximise your position, not just get you approved.</p>
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-call">Get a Free Investment Loan Assessment</a>
+      <a href="tel:+61414406887" class="btn-contact-hero">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTRO ── -->
+<section class="intro">
+  <div class="service-grid">
+    <div class="service-body">
+      <span class="section-label">Investment Lending</span>
+      <h2 class="section-h2">Investment Loans That Work Harder for Your Portfolio</h2>
+      <p>Getting into the Sydney property investment market, or growing within it, requires more than just a competitive rate. The structure of your investment loan affects your cash flow, tax position and long-term borrowing capacity. Getting it right from day one matters.</p>
+      <p>At Bang On Investments, we take a strategy-first approach to investment lending. We look at your full financial picture, understand your goals, and structure your loan to support your portfolio over the long term. We work with investors across Sydney including Strathfield and Concord where inner-west properties continue to attract strong rental demand, the lower north shore suburbs of Chatswood and North Sydney popular with professional tenants, and the prestige upper north shore areas of Pymble and Killara.</p>
+      <p>Sydney remains one of Australia's strongest property investment markets. Whether you are targeting high-yield inner-city apartments, family homes in premium school zones or lifestyle properties in the Southern Highlands, the right loan structure makes a significant difference to your outcome.</p>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+        <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="service-image">
+      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=840&q=80" alt="Investment property finance">
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIAL 1 ── -->
+<section class="pull-quote bg-light">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang and the team were so fantastic to work with. Their positivity, energy and professionalism made for a fantastic process and we felt supported every step of the way."</blockquote>
+    <cite>Xanthe L</cite>
+  </div>
+</section>
+
+<!-- ── WHAT WE OFFER ── -->
+<section class="what-we-offer">
+  <div class="offer-header">
+    <span class="section-label">Our Approach</span>
+    <h2 class="section-h2">How We Structure Investment Loans</h2>
+  </div>
+  <div class="offer-grid">
+
+    <div class="offer-card">
+      <h3>Stand-Alone Loan Structuring</h3>
+      <p>For clients with a growing portfolio, we structure each investment property as a stand-alone security where possible. This reduces cross-collateralisation risk and protects your flexibility to sell or refinance individual assets without affecting the rest of your portfolio.</p>
+      <a href="tel:+61414406887" class="offer-card-cta">
+        Want to know how this could work for you? Call 0414 406 887
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="offer-card">
+      <h3>Using Equity to Buy Your Next Property</h3>
+      <p>One of the most powerful strategies we help clients with is using existing equity in their home or current investment properties as a deposit for their next purchase, without needing additional cash savings. We will assess your usable equity and show you exactly what is possible.</p>
+      <a href="tel:+61414406887" class="offer-card-cta">
+        Find out how much equity you can access. Call 0414 406 887
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="offer-card">
+      <h3>Interest Only vs Principal and Interest</h3>
+      <p>Choosing between interest-only and principal and interest repayments on an investment loan can significantly affect your cash flow and tax outcome. We explain both options clearly and help you choose the structure that suits your strategy, whether you are focused on growth, yield or both.</p>
+      <a href="tel:+61414406887" class="offer-card-cta">
+        Not sure which is right for you? Call 0414 406 887
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="offer-card">
+      <h3>Tax-Effective Loan Structuring</h3>
+      <p>We work alongside your accountant or financial adviser to structure your investment loan in a way that complements your tax strategy. This includes choosing the right loan type, entity structure and split between deductible and non-deductible debt.</p>
+      <a href="tel:+61414406887" class="offer-card-cta">
+        Talk to us about tax-effective structuring. Call 0414 406 887
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+  <div style="max-width:1200px;margin:32px auto 0;">
+    <div class="cta-buttons">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIAL 2 ── -->
+<section class="pull-quote bg-white" style="border-left: none;">
+  <div class="pull-quote-inner" style="border-left-color: var(--dark);">
+    <blockquote>"Bang helped us come up with the best solution for us. Bang is always there with the knowledge to help and guide us through the process."</blockquote>
+    <cite>Chris W</cite>
+  </div>
+</section>
+
+<!-- ── SUBURBS ── -->
+<section class="suburbs">
+  <div class="suburbs-grid">
+    <div class="suburbs-body">
+      <span class="section-label">Service Areas</span>
+      <h2 class="section-h2">Helping Property Investors Across Sydney</h2>
+      <p>We work with property investors across Greater Sydney and the Southern Highlands. Many of our Strathfield and Concord clients are building inner-west portfolios targeting strong rental yields. Our Chatswood and North Sydney clients often focus on lower north shore apartments popular with professional tenants. In Pymble, Killara and Lindfield, we help investors targeting prestige family homes in top school zones. In Bowral and the Southern Highlands, we work with clients buying holiday rental or lifestyle investment properties.</p>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+        <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="suburbs-image">
+      <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=840&q=80" alt="Sydney property investment">
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQs ── -->
+<section class="faqs">
+  <div class="faqs-inner">
+    <span class="section-label">Got Questions?</span>
+    <h2 class="section-h2">Investment Loan FAQs</h2>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq1">
+      <label for="faq1">What is the difference between an investment loan and a home loan?</label>
+      <div class="faq-body">
+        <p>Investment loans are used to purchase property you intend to rent out rather than live in. They often carry slightly higher interest rates but offer significant tax advantages. The structure of the loan matters from day one and we help you get it right.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq2">
+      <label for="faq2">Can I use equity in my home to buy an investment property?</label>
+      <div class="faq-body">
+        <p>Yes. If you have sufficient usable equity in your existing home, you may be able to use it as a deposit for an investment property without needing additional cash savings. This is one of the most common strategies we help clients with across Sydney.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq3">
+      <label for="faq3">How much deposit do I need for an investment property in Sydney?</label>
+      <div class="faq-body">
+        <p>Most lenders require a minimum 10 to 20% deposit for investment properties in Sydney. The exact amount depends on the lender, the property type and your overall financial position. In some cases, equity from an existing property can be used in place of a cash deposit.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq4">
+      <label for="faq4">Should I choose interest only or principal and interest for an investment loan?</label>
+      <div class="faq-body">
+        <p>It depends on your strategy. Interest-only loans can improve short-term cash flow and may offer tax benefits, but you will not be reducing the loan balance. Principal and interest builds equity faster. We will help you compare both based on your goals.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq5">
+      <label for="faq5">Can I get an investment loan if I am self-employed?</label>
+      <div class="faq-body">
+        <p>Yes. We work with lenders who understand self-employed income structures and can consider BAS statements and alternative documentation. We will present your application in the strongest possible way.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq6">
+      <label for="faq6">What suburbs in Sydney are popular for investment property?</label>
+      <div class="faq-body">
+        <p>Inner west suburbs like Strathfield, Concord, Burwood and Ashfield consistently attract strong rental demand from professionals and families. The lower north shore including Chatswood and North Sydney is popular with corporate tenants. Newtown and the surrounding inner city appeal to students and young professionals. In the upper north shore, Pymble and Killara attract families seeking top school zones. We help investors across all these markets structure the right loan for their target area.</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons" style="margin-top:36px;">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Ready to Build Your Property Portfolio?</h2>
+    <p>Get in touch for a free, no-obligation investment loan assessment. We will look at your full financial picture, compare 25+ lenders and structure a loan that supports your long-term strategy.</p>
+    <p class="phone-line">Call us on <a href="tel:+61414406887">0414 406 887</a></p>
+    <div class="cta-buttons centered">
+      <a href="/contact-us/" class="btn-dark">Get in Touch</a>
+      <a href="tel:+61414406887" class="btn-contact-hero">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 Bang On Investments | All Rights Reserved</span>
+    <div class="footer-legal">
+      <span>Australian Credit Licence No. 394371</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
