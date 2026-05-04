@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Loans Sydney | Car, Boat & Motorcycle Finance | Bang On Investments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #E8732A;
+      --orange-dark: #C95E1A;
+      --dark: #1C1C1E;
+      --text: #333333;
+      --muted: #666666;
+      --light-bg: #F8F7F5;
+      --border: #E0E0E0;
+      --footer-bg: #252527;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); background: rgba(232,115,42,0.06); }
+    .nav-links .nav-has-arrow::after {
+      content: ' \25BE';
+      font-size: 10px;
+      opacity: 0.6;
+    }
+
+    /* ── NAV DROPDOWN ── */
+    .nav-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 210px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+      padding: 6px 0;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      background: none;
+      border-radius: 0;
+    }
+    .dropdown-menu a:hover { background: rgba(232,115,42,0.06); color: var(--orange); }
+    .dropdown-menu a::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .dropdown-menu a:hover::before { background: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=80') center 60% / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(20,20,20,0.30) 0%, rgba(20,20,20,0.72) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 44px);
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 680px;
+    }
+
+    /* ── SHARED ── */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 28px);
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    /* ── INTRO TAGLINE ── */
+    .intro-tagline {
+      background: var(--white);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .intro-tagline h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 30px);
+      color: var(--dark);
+      max-width: 820px;
+      margin: 0 auto;
+      line-height: 1.3;
+    }
+
+    /* ── CONTENT + IMAGE ── */
+    .content-section {
+      background: var(--white);
+      padding: 0 24px 64px;
+    }
+    .content-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 60px;
+      align-items: start;
+    }
+    .content-body p {
+      font-size: 15.5px;
+      color: var(--text);
+      margin-bottom: 18px;
+      line-height: 1.75;
+    }
+    .content-image img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      padding: 44px 24px;
+      border-left: 5px solid var(--orange);
+      background: var(--light-bg);
+    }
+    .pull-quote-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .pull-quote blockquote {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17.5px;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.55;
+      font-style: italic;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 12px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: normal;
+    }
+    .stars { color: var(--orange); letter-spacing: 2px; }
+
+    /* ── WHAT WE FINANCE ── */
+    .what-we-finance {
+      background: var(--white);
+      padding: 64px 24px;
+    }
+    .finance-intro {
+      font-size: 15.5px;
+      color: var(--text);
+      margin: 12px 0 28px;
+    }
+    .finance-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .finance-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px 24px;
+      background: var(--white);
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .finance-card:hover {
+      box-shadow: 0 6px 24px rgba(232,115,42,0.10);
+      border-color: var(--orange);
+    }
+    .finance-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(232,115,42,0.10);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .finance-icon svg { color: var(--orange); }
+    .finance-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15.5px;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .finance-card p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works {
+      background: var(--light-bg);
+      padding: 64px 24px;
+    }
+    .how-it-works .section-h2 { margin-bottom: 36px; }
+    .steps {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: calc(12.5% + 10px);
+      right: calc(12.5% + 10px);
+      height: 2px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .step {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 2px 8px rgba(232,115,42,0.30);
+    }
+    .step p {
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── FAQs ── */
+    .faqs {
+      background: var(--white);
+      padding: 64px 24px;
+    }
+    .faqs-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .faqs-inner .section-h2 { margin-bottom: 32px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+    }
+    .faq-item:first-of-type { border-top: 1px solid var(--border); }
+    .faq-item input[type="checkbox"] { display: none; }
+    .faq-q {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--orange);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .faq-item input:checked ~ .faq-q::after { content: '\2212'; }
+    .faq-a {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+    }
+    .faq-item input:checked ~ .faq-a {
+      max-height: 300px;
+      padding-bottom: 18px;
+    }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      background: var(--light-bg);
+      padding: 28px 24px;
+    }
+    .disclaimer p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 12.5px;
+      color: #999;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--orange);
+      padding: 60px 24px;
+    }
+    .final-cta-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(24px, 4vw, 36px);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .final-cta p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* ── DUAL CTA BUTTONS ── */
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .cta-buttons.centered { justify-content: center; }
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 13px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      box-shadow: 0 3px 10px rgba(232,115,42,0.30);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-call:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 16px rgba(232,115,42,0.38);
+    }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: 2px solid var(--dark);
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-contact:hover {
+      background: var(--dark);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .final-cta .btn-call {
+      background: var(--dark);
+      box-shadow: none;
+    }
+    .final-cta .btn-call:hover { background: #000; }
+    .final-cta .btn-contact {
+      border-color: var(--white);
+      color: var(--white);
+      background: transparent;
+    }
+    .final-cta .btn-contact:hover {
+      background: var(--white);
+      color: var(--dark);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--footer-bg);
+      padding: 20px 24px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.5); }
+    .footer-legal {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .footer-legal a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-legal a:hover { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="https://www.bangoninvestments.com.au/wp-content/uploads/2022/06/bang-on-investments-logo-main.png" alt="Bang On Investments">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/information" class="nav-has-arrow">Information</a></li>
+      <li class="nav-dropdown">
+        <a href="/services" class="nav-has-arrow">Our Services</a>
+        <div class="dropdown-menu">
+          <a href="home-loans.html">Home Loans</a>
+          <a href="business-loans.html">Business Loans</a>
+          <a href="vehicle-loans.html">Vehicle Loans</a>
+          <a href="medical-loans.html">Medical Professionals</a>
+        </div>
+      </li>
+      <li><a href="/tools" class="nav-has-arrow">Tools</a></li>
+      <li><a href="/contact" class="nav-has-arrow">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Vehicle Loans in Sydney</h1>
+  </div>
+</section>
+
+<!-- ── INTRO TAGLINE ── -->
+<section class="intro-tagline">
+  <h2>Two decades of experience securing competitive vehicle loans. We're driven by a mission to see you arrive at your destination in style.</h2>
+</section>
+
+<!-- ── CONTENT + IMAGE ── -->
+<section class="content-section">
+  <div class="content-grid">
+    <div class="content-body">
+      <h2 class="section-h2" style="margin-bottom:20px;">Your Vehicle Is More Than a Way to Get Around</h2>
+      <p>A car, a motorcycle, a boat. These aren't just transport. They're an important part of creating the life you want. As a busy professional, your vehicle is your connection to work, family, friends and the weekends you've been looking forward to all week.</p>
+      <p>At Bang On Investments, we understand your vehicle loan is as much a part of your vision as your home or business loan. We work to structure your loan so it offers the most competitive rates for your unique situation, so you can get on the road (or the water) sooner, and pay it off faster.</p>
+      <p>We draw on our industry knowledge and lender relationships to provide quick, easy finance solutions with minimal red tape.</p>
+      <!-- BOTH CTAs -->
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+        <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="content-image">
+      <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=760&q=80" alt="Vehicle finance">
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE 1 ── -->
+<section class="pull-quote">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang is always there with the knowledge to help and guide us through the process. Couldn't recommend more highly."</blockquote>
+    <cite>Chris W &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── WHAT WE FINANCE ── -->
+<section class="what-we-finance">
+  <div class="section-wrap">
+    <h2 class="section-h2">What We Can Finance</h2>
+    <p class="finance-intro">We arrange vehicle finance for a wide range of personal and business vehicles, including:</p>
+    <div class="finance-grid">
+
+      <div class="finance-card">
+        <div class="finance-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Cars</h3>
+        <p>Sedans, wagons, SUVs, 4WDs, utes and motorcycles, for personal and business use.</p>
+      </div>
+
+      <div class="finance-card">
+        <div class="finance-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="M10 3v13"/></svg>
+        </div>
+        <h3>Trucks &amp; Commercial Vehicles</h3>
+        <p>Vans to prime movers, buses and commercial fleets. We work with lenders who understand business vehicle finance.</p>
+      </div>
+
+      <div class="finance-card">
+        <div class="finance-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M3 20V10l9-7 9 7v10"/><path d="M9 20v-6h6v6"/><path d="M5 14h2M17 14h2"/></svg>
+        </div>
+        <h3>Boats &amp; Watercraft</h3>
+        <p>Yachts, pleasure crafts, jet skis and fishing boats. Because the water deserves as much thought as the road.</p>
+      </div>
+
+    </div>
+    <!-- SINGLE CTA -->
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE 2 ── -->
+<section class="pull-quote" style="border-left:none; border-right:5px solid var(--orange); text-align:right; background:var(--white);">
+  <div class="pull-quote-inner">
+    <blockquote>"As a first home buyer, Bang helped make the entire experience feel less painful. Their knowledge and service was second to none."</blockquote>
+    <cite>Josh R &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-it-works">
+  <div class="section-wrap">
+    <h2 class="section-h2">How Our Vehicle Loan Process Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Tell us about the vehicle: make, model, new or used, personal or business use.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>We compare rates and loan structures from our lender panel to find the best fit.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>We handle the paperwork and keep you updated throughout.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>You get on the road, or the water, as quickly as possible.</p>
+      </div>
+    </div>
+    <!-- BOTH CTAs -->
+    <div class="cta-buttons">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQs ── -->
+<section class="faqs">
+  <div class="faqs-inner">
+    <h2 class="section-h2">Vehicle Loan FAQs</h2>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq1">
+      <label class="faq-q" for="faq1">Can I get a vehicle loan for a used car?</label>
+      <div class="faq-a">Yes. We arrange finance for both new and used vehicles. Interest rates and terms may vary depending on the age and condition of the vehicle. We'll find the best available option for your situation.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq2">
+      <label class="faq-q" for="faq2">Is a vehicle loan or a car lease better for me?</label>
+      <div class="faq-a">It depends on your situation. A vehicle loan means you own the asset at the end of the term. A lease can offer lower monthly payments but you don't own the vehicle. For business use, a lease may have tax advantages. We'll help you compare both options.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq3">
+      <label class="faq-q" for="faq3">Can I finance a vehicle for business use?</label>
+      <div class="faq-a">Absolutely. We arrange business vehicle finance for sole traders, companies and trusts, including cars, utes, vans and trucks. Business vehicle finance may offer different tax treatment to personal loans.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq4">
+      <label class="faq-q" for="faq4">How quickly can I get a vehicle loan approved?</label>
+      <div class="faq-a">Vehicle loans are typically faster to approve than home loans. In many cases, approval can happen within 24 to 48 hours once documents are provided. We'll keep you updated throughout.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq5">
+      <label class="faq-q" for="faq5">Do you arrange finance for boats and jet skis?</label>
+      <div class="faq-a">Yes. We arrange finance for a wide range of watercraft including yachts, pleasure crafts, jet skis and fishing boats. Speak to us about your specific requirements.</div>
+    </div>
+
+    <!-- SINGLE CTA -->
+    <p style="margin-top:24px; font-size:15px; color:var(--muted);">Have a question about vehicle finance?</p>
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── DISCLAIMER ── -->
+<section class="disclaimer">
+  <p>* Please note that every client's situation is unique and terms and conditions apply. Contact us to initiate a full application assessment to determine an outcome.</p>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Ready to Hit the Road?</h2>
+    <p>Get in touch for a free, no-obligation vehicle finance quote. We'll compare lenders and find you the most competitive rate for your situation.</p>
+    <!-- BOTH CTAs -->
+    <div class="cta-buttons centered">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 Bang On Investments | All Rights Reserved</span>
+    <div class="footer-legal">
+      <span>Australian Credit Licence No. 394371</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

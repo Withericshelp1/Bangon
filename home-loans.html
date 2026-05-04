@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Loans Sydney | Mortgage Broker | Bang On Investments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #E8732A;
+      --orange-dark: #C95E1A;
+      --dark: #1C1C1E;
+      --text: #333333;
+      --muted: #666666;
+      --light-bg: #F8F7F5;
+      --border: #E0E0E0;
+      --footer-bg: #252527;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); background: rgba(232,115,42,0.06); }
+    .nav-links .nav-has-arrow::after {
+      content: ' \25BE';
+      font-size: 10px;
+      opacity: 0.6;
+    }
+
+    /* ── NAV DROPDOWN ── */
+    .nav-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 210px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+      padding: 6px 0;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      background: none;
+      border-radius: 0;
+    }
+    .dropdown-menu a:hover { background: rgba(232,115,42,0.06); color: var(--orange); }
+    .dropdown-menu a::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .dropdown-menu a:hover::before { background: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?w=1400&q=80') center center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(20,20,20,0.35) 0%, rgba(20,20,20,0.72) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 44px);
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 680px;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 28px);
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    /* ── INTRO TAGLINE ── */
+    .intro-tagline {
+      background: var(--white);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .intro-tagline h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 30px);
+      color: var(--dark);
+      max-width: 820px;
+      margin: 0 auto;
+      line-height: 1.3;
+    }
+
+    /* ── CONTENT + IMAGE ── */
+    .content-section {
+      background: var(--white);
+      padding: 0 24px 64px;
+    }
+    .content-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 60px;
+      align-items: start;
+    }
+    .content-body p {
+      font-size: 15.5px;
+      color: var(--text);
+      margin-bottom: 18px;
+      line-height: 1.75;
+    }
+    .content-body .inline-cta {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .content-body .inline-cta a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .content-body .inline-cta a:hover { text-decoration: underline; }
+    .content-image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      padding: 44px 24px;
+      border-left: 5px solid var(--orange);
+      background: var(--light-bg);
+    }
+    .pull-quote-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .pull-quote blockquote {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17.5px;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.55;
+      font-style: italic;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 12px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: normal;
+    }
+    .stars { color: var(--orange); letter-spacing: 2px; }
+
+    /* ── WHAT WE OFFER ── */
+    .what-we-offer {
+      background: var(--white);
+      padding: 64px 24px;
+    }
+    .offer-intro {
+      font-size: 15.5px;
+      color: var(--text);
+      margin: 12px 0 24px;
+    }
+    .offer-list {
+      max-width: 1200px;
+      margin: 0 auto;
+      list-style: none;
+      counter-reset: offer-counter;
+    }
+    .offer-list li {
+      counter-increment: offer-counter;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .offer-list li:first-child { border-top: 1px solid var(--border); }
+    .offer-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .offer-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .offer-text span {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .offer-closing {
+      max-width: 1200px;
+      margin: 20px auto 0;
+      font-size: 14.5px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.65;
+    }
+    .offer-closing a, .text-link { color: var(--orange); text-decoration: none; font-weight: 600; }
+    .offer-closing a:hover, .text-link:hover { text-decoration: underline; }
+    .section-cta-text {
+      max-width: 1200px;
+      margin: 20px auto 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .section-cta-text a { color: var(--orange); font-weight: 600; text-decoration: none; }
+    .section-cta-text a:hover { text-decoration: underline; }
+
+    /* ── LOAN TYPES ── */
+    .loan-types {
+      background: var(--light-bg);
+      padding: 64px 24px;
+    }
+    .loan-types .section-h2 { margin-bottom: 32px; }
+    .loan-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .loan-item input[type="checkbox"] { display: none; }
+    .loan-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15.5px;
+      color: var(--dark);
+      user-select: none;
+      gap: 16px;
+      transition: background 0.15s;
+    }
+    .loan-item-header:hover { background: rgba(232,115,42,0.04); }
+    .loan-item-header::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--orange);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .loan-item input:checked ~ .loan-item-header { background: rgba(232,115,42,0.05); }
+    .loan-item input:checked ~ .loan-item-header::after { content: '\2212'; }
+    .loan-item-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .loan-item input:checked ~ .loan-item-body { max-height: 300px; }
+    .loan-item-body-inner {
+      padding: 0 24px 20px;
+      border-top: 1px solid var(--border);
+    }
+    .loan-item-body-inner p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      padding-top: 16px;
+    }
+    .loan-item-body-inner .loan-cta {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .loan-item-body-inner .loan-cta:hover { text-decoration: underline; }
+
+    /* ── WHY US ── */
+    .why-us {
+      background: var(--white);
+      padding: 64px 24px;
+    }
+    .why-us .section-h2 { margin-bottom: 28px; }
+    .why-list {
+      max-width: 860px;
+      list-style: none;
+    }
+    .why-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15.5px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .why-list li:first-child { border-top: 1px solid var(--border); }
+    .why-tick {
+      width: 22px;
+      height: 22px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .why-tick::after {
+      content: '';
+      width: 6px;
+      height: 10px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg) translate(-1px, -1px);
+      display: block;
+    }
+    .why-cta {
+      margin-top: 24px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .why-cta a { color: var(--orange); font-weight: 600; text-decoration: none; }
+    .why-cta a:hover { text-decoration: underline; }
+
+    /* ── SUBURBS ── */
+    .suburbs {
+      background: var(--light-bg);
+      padding: 52px 24px;
+    }
+    .suburbs .section-h2 { margin-bottom: 16px; }
+    .suburbs p {
+      max-width: 860px;
+      font-size: 15.5px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── FAQs ── */
+    .faqs {
+      background: var(--white);
+      padding: 64px 24px;
+    }
+    .faqs-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .faqs-inner .section-h2 { margin-bottom: 32px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+    }
+    .faq-item:first-of-type { border-top: 1px solid var(--border); }
+    .faq-item input[type="checkbox"] { display: none; }
+    .faq-q {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--orange);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .faq-item input:checked ~ .faq-q::after { content: '\2212'; }
+    .faq-a {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+    }
+    .faq-item input:checked ~ .faq-a {
+      max-height: 300px;
+      padding-bottom: 18px;
+    }
+    .faq-cta {
+      margin-top: 24px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .faq-cta a { color: var(--orange); font-weight: 600; text-decoration: none; }
+    .faq-cta a:hover { text-decoration: underline; }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      background: var(--light-bg);
+      padding: 28px 24px;
+    }
+    .disclaimer p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 12.5px;
+      color: #999;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--orange);
+      padding: 60px 24px;
+    }
+    .final-cta-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(24px, 4vw, 36px);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .final-cta p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .btn-dark {
+      display: inline-block;
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-dark:hover { background: #000; transform: translateY(-1px); }
+    .cta-contact-line {
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+    }
+    .cta-contact-line a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta-contact-line a:hover { text-decoration: underline; }
+
+    /* ── DUAL CTA BUTTONS ── */
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 13px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      box-shadow: 0 3px 10px rgba(232,115,42,0.30);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-call:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 16px rgba(232,115,42,0.38);
+    }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: 2px solid var(--dark);
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-contact:hover {
+      background: var(--dark);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    /* On orange-bg sections, invert the contact button */
+    .final-cta .btn-contact {
+      border-color: var(--white);
+      color: var(--white);
+      background: transparent;
+    }
+    .final-cta .btn-contact:hover {
+      background: var(--white);
+      color: var(--dark);
+    }
+    /* On light-bg sections, keep buttons looking sharp */
+    .loan-types .btn-call,
+    .suburbs .btn-call,
+    .why-us .btn-call { box-shadow: 0 3px 10px rgba(232,115,42,0.25); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--footer-bg);
+      padding: 20px 24px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.5); }
+    .footer-legal {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .footer-legal a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-legal a:hover { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="https://www.bangoninvestments.com.au/wp-content/uploads/2022/06/bang-on-investments-logo-main.png" alt="Bang On Investments">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/information" class="nav-has-arrow">Information</a></li>
+      <li class="nav-dropdown">
+        <a href="/services" class="nav-has-arrow">Our Services</a>
+        <div class="dropdown-menu">
+          <a href="home-loans.html">Home Loans</a>
+          <a href="business-loans.html">Business Loans</a>
+          <a href="vehicle-loans.html">Vehicle Loans</a>
+          <a href="medical-loans.html">Medical Professionals</a>
+        </div>
+      </li>
+      <li><a href="/tools" class="nav-has-arrow">Tools</a></li>
+      <li><a href="/contact" class="nav-has-arrow">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Home Loans in Sydney</h1>
+  </div>
+</section>
+
+<!-- ── INTRO TAGLINE ── -->
+<section class="intro-tagline">
+  <h2>With access to 25+ lenders and a tailored approach for every client, we help you get where you want to be, faster.</h2>
+</section>
+
+<!-- ── CONTENT + IMAGE ── -->
+<section class="content-section">
+  <div class="content-grid">
+    <div class="content-body">
+      <h2 class="section-h2" style="margin-bottom:20px;">Sydney Home Loan Specialists. Tailored Finance for Every Situation.</h2>
+      <p>At Bang On Investments, we have learned that no two home loans are exactly the same, because no two homeowners are exactly the same. Whether you are buying your first home, upgrading, investing or refinancing, getting the right loan structure can save you tens of thousands over the life of your loan.</p>
+      <p>Our process starts with getting to know you. Your current situation, your future vision, and the gap in between. We draw on our expertise and our extensive lender network to design a solution that moves you closer to your goals.</p>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call 0414 406 887</a>
+        <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="content-image">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=760&q=80" alt="Sydney property">
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE 1 ── -->
+<section class="pull-quote">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang and the team were so fantastic to work with. Their positivity, energy and professionalism made for a fantastic process and we felt supported every step of the way."</blockquote>
+    <cite>Xanthe L &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── WHAT WE OFFER ── -->
+<section class="what-we-offer">
+  <div class="section-wrap">
+    <h2 class="section-h2">Home Loan Solutions We Specialise In</h2>
+    <p class="offer-intro">We offer:</p>
+    <ul class="offer-list">
+      <li>
+        <span class="offer-num">1</span>
+        <span class="offer-text">
+          <strong>Investment Property Home Loans</strong>
+          <span>Custom-designed investment property home loans that enable you to build a robust portfolio.</span>
+        </span>
+      </li>
+      <li>
+        <span class="offer-num">2</span>
+        <span class="offer-text">
+          <strong>Tax-Effective Loan Structuring</strong>
+          <span>Home loans structured to maximise your accountant's tax strategies.</span>
+        </span>
+      </li>
+      <li>
+        <span class="offer-num">3</span>
+        <span class="offer-text">
+          <strong>Portfolio Stand-Alone Structuring</strong>
+          <span>For clients with a property portfolio (depending on available equity), reduced risk due to each security being structured as stand-alone.</span>
+        </span>
+      </li>
+      <li>
+        <span class="offer-num">4</span>
+        <span class="offer-text">
+          <strong>Low Doc Home Loans</strong>
+          <span>Low doc home loans using 12 months BAS statements.</span>
+        </span>
+      </li>
+      <li>
+        <span class="offer-num">5</span>
+        <span class="offer-text">
+          <strong>Cash Out Using Residential Security</strong>
+          <span>Cash out using residential security.</span>
+        </span>
+      </li>
+      <li>
+        <span class="offer-num">6</span>
+        <span class="offer-text">
+          <strong>LMI Waivers for Professionals</strong>
+          <span>For professional clients, including those in specific legal, accounting or medical fields, Lenders Mortgage Insurance can be waived up to an LVR of 90%.</span>
+        </span>
+      </li>
+    </ul>
+    <p class="offer-closing" style="margin-top:20px;">If you don't see what you need, or you're looking for someone who can walk you step-by-step through the home loan process, please reach out to one of our home loan experts.</p>
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOAN TYPES ── -->
+<section class="loan-types">
+  <div class="section-wrap">
+    <h2 class="section-h2">Home Loan Types We Help With</h2>
+
+    <div class="loan-item">
+      <input type="checkbox" id="lt1">
+      <label class="loan-item-header" for="lt1">First Home Buyer Loans</label>
+      <div class="loan-item-body">
+        <div class="loan-item-body-inner">
+          <p>Buying your first home can feel overwhelming. We guide you through every step, from understanding your borrowing capacity to settlement, and help you access the First Home Owner Grant and stamp duty concessions where eligible.</p>
+          <a href="tel:+61414406887" class="loan-cta">Ready to buy your first home? Call 0414 406 887.</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="loan-item">
+      <input type="checkbox" id="lt2">
+      <label class="loan-item-header" for="lt2">Refinancing</label>
+      <div class="loan-item-body">
+        <div class="loan-item-body-inner">
+          <p>If you have not reviewed your home loan in the past two years, you could be paying too much. We compare your current rate against the market and move you to a better deal if one exists, with minimal disruption to you.</p>
+          <a href="tel:+61414406887" class="loan-cta">Thinking about refinancing? Call 0414 406 887.</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="loan-item">
+      <input type="checkbox" id="lt3">
+      <label class="loan-item-header" for="lt3">Fixed vs Variable Rate Loans</label>
+      <div class="loan-item-body">
+        <div class="loan-item-body-inner">
+          <p>Not sure whether to fix your rate or stay variable? We explain both options clearly and help you choose the right structure, or split your loan, based on your goals and circumstances.</p>
+          <a href="/contact-us/" class="loan-cta">Want to understand your rate options? Get in touch.</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="loan-item">
+      <input type="checkbox" id="lt4">
+      <label class="loan-item-header" for="lt4">Self-Employed Home Loans</label>
+      <div class="loan-item-body">
+        <div class="loan-item-body-inner">
+          <p>Self-employed borrowers face unique challenges. We work with lenders who understand non-traditional income and can accept BAS statements, and we know how to present your application in the strongest possible way.</p>
+          <a href="tel:+61414406887" class="loan-cta">Self-employed? Call 0414 406 887. We specialise in this.</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="loan-item">
+      <input type="checkbox" id="lt5">
+      <label class="loan-item-header" for="lt5">Investment Property Loans</label>
+      <div class="loan-item-body">
+        <div class="loan-item-body-inner">
+          <p>Building a portfolio? We structure investment loans to maximise your borrowing capacity and minimise cost, always with your long-term strategy in mind.</p>
+          <a href="tel:+61414406887" class="loan-cta">Ready to invest? Call 0414 406 887.</a>
+        </div>
+      </div>
+    </div>
+    <div class="cta-buttons" style="margin-top:28px;">
+      <a href="tel:+61414406887" class="btn-call"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call 0414 406 887</a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE 2 ── -->
+<section class="pull-quote" style="border-left:none; border-right:5px solid var(--orange); text-align:right; background:var(--white);">
+  <div class="pull-quote-inner">
+    <blockquote>"As a first home buyer, Bang helped make the entire experience feel less painful. Their knowledge of the home-buying process was second to none, and the customer service was excellent. Highly recommended."</blockquote>
+    <cite>Josh R &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE US ── -->
+<section class="why-us">
+  <div class="section-wrap">
+    <h2 class="section-h2">Why Choose Bang On Investments for Your Home Loan?</h2>
+    <ul class="why-list">
+      <li>
+        <span class="why-tick"></span>
+        <span>Access to 25+ lenders, including major banks, non-bank lenders and specialist providers</span>
+      </li>
+      <li>
+        <span class="why-tick"></span>
+        <span>Fully assessed pre-approval. Stronger offers and fewer surprises at the negotiating table</span>
+      </li>
+      <li>
+        <span class="why-tick"></span>
+        <span>Personalised service. We take time to understand your full situation before recommending anything</span>
+      </li>
+      <li>
+        <span class="why-tick"></span>
+        <span>No cost to you. We are paid by the lender at settlement</span>
+      </li>
+      <li>
+        <span class="why-tick"></span>
+        <span>Sydney-based. We know the local property market</span>
+      </li>
+    </ul>
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SUBURBS ── -->
+<section class="suburbs">
+  <div class="section-wrap">
+    <h2 class="section-h2">Helping Home Buyers Across Sydney and the Southern Highlands</h2>
+    <p style="margin-top:16px;">We work with home buyers and investors across Greater Sydney, including Chatswood, Strathfield, North Sydney, Willoughby, Concord, Pymble, Killara, Bowral and surrounding areas. Wherever you are buying, we are here to help.</p>
+  </div>
+</section>
+
+<!-- ── FAQs ── -->
+<section class="faqs">
+  <div class="faqs-inner">
+    <h2 class="section-h2">Home Loan FAQs</h2>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq1">
+      <label class="faq-q" for="faq1">How much deposit do I need for a home loan?</label>
+      <div class="faq-a">Most lenders require a minimum 5 to 10% deposit, though 20% avoids Lenders Mortgage Insurance (LMI). Some professions, including medical professionals, can borrow up to 90 to 95% without LMI. We will assess your situation and explain your options.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq2">
+      <label class="faq-q" for="faq2">What is LMI and can I avoid it?</label>
+      <div class="faq-a">LMI protects the lender if you default. It is typically required when borrowing more than 80% of the property value. Medical professionals and certain other occupations can get LMI waivers. Speak to us to find out if you qualify.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq3">
+      <label class="faq-q" for="faq3">How long does home loan approval take?</label>
+      <div class="faq-a">With a fully assessed pre-approval, typically 3 to 5 business days. Full approval after finding a property can take 5 to 15 business days depending on the lender.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq4">
+      <label class="faq-q" for="faq4">Can I get a home loan if I am self-employed?</label>
+      <div class="faq-a">Yes. We specialise in self-employed home loans and work with lenders who accept BAS statements and alternative income evidence.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq5">
+      <label class="faq-q" for="faq5">What is the difference between a fixed and variable rate?</label>
+      <div class="faq-a">A fixed rate locks in your repayments for a set term, giving you certainty. A variable rate moves with the market and can go up or down. Many clients choose a split loan to get the benefits of both. We will help you decide which suits your goals.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq6">
+      <label class="faq-q" for="faq6">Do you charge a fee to find me a home loan?</label>
+      <div class="faq-a">In most cases, no. Mortgage brokers are paid a commission by the lender when your loan settles. We will always be upfront about how we are paid. There are no hidden costs to you.</div>
+    </div>
+
+    <p style="margin-top:24px; font-size:15px; color:var(--muted);">Have another question?</p>
+    <div class="cta-buttons">
+      <a href="tel:+61414406887" class="btn-call"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call 0414 406 887</a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── DISCLAIMER ── -->
+<section class="disclaimer">
+  <p>* Please note that every client's situation is unique and terms and conditions apply. Contact us to initiate a full application assessment for you to determine an outcome.</p>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Ready to Find Your Home Loan?</h2>
+    <p>Get in touch for a free, no-obligation conversation. We will compare 25+ lenders and find the right loan for your situation, with no cost to you.</p>
+    <div class="cta-buttons" style="justify-content:center;">
+      <a href="tel:+61414406887" class="btn-dark"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call 0414 406 887</a>
+      <a href="/contact-us/" class="btn-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 Bang On Investments | All Rights Reserved</span>
+    <div class="footer-legal">
+      <span>Australian Credit Licence No. 394371</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
