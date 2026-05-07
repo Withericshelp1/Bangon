@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMI Waiver for Medical Professionals Sydney | Bang On Investments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #E8732A;
+      --orange-dark: #C95E1A;
+      --dark: #1C1C1E;
+      --text: #333333;
+      --muted: #666666;
+      --light-bg: #F8F7F5;
+      --border: #E0E0E0;
+      --footer-bg: #252527;
+      --white: #ffffff;
+    }
+
+    body { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: var(--text); line-height: 1.7; }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 52px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); background: rgba(232,115,42,0.06); }
+    .nav-links .nav-has-arrow::after { content: ' \25BE'; font-size: 10px; opacity: 0.6; }
+    .nav-links a.active { color: var(--orange); }
+    .nav-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 230px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+      padding: 6px 0;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      background: none;
+      border-radius: 0;
+    }
+    .dropdown-menu a:hover { background: rgba(232,115,42,0.06); color: var(--orange); }
+    .dropdown-menu a::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .dropdown-menu a:hover::before { background: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 400px;
+      background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1400&q=80') center 40% / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(20,20,20,0.30) 0%, rgba(20,20,20,0.80) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px 52px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(232,115,42,0.85);
+      border-radius: 3px;
+      padding: 5px 13px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(26px, 3.8vw, 42px);
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 720px;
+      margin-bottom: 14px;
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      max-width: 620px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* ── SHARED ── */
+    .section-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 28px);
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    /* ── CTA BUTTONS ── */
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .cta-buttons.centered { justify-content: center; }
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: var(--white) !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 13px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      box-shadow: 0 3px 10px rgba(232,115,42,0.30);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-call svg { color: var(--white) !important; flex-shrink: 0; }
+    .btn-call:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(232,115,42,0.38); }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: 2px solid var(--dark);
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-contact:hover { background: var(--dark); color: var(--white); transform: translateY(-2px); }
+    .final-cta .btn-call { background: var(--dark); box-shadow: none; }
+    .final-cta .btn-call:hover { background: #000; }
+    .final-cta .btn-contact { border-color: var(--white); color: var(--white); background: transparent; }
+    .final-cta .btn-contact:hover { background: var(--white); color: var(--dark); }
+
+    /* ── INTRO SECTION ── */
+    .intro-section { background: var(--white); padding: 64px 24px; }
+    .intro-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 60px;
+      align-items: start;
+    }
+    .intro-body .section-h2 { margin-bottom: 20px; }
+    .intro-body p {
+      font-size: 15.5px;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+    .intro-image img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .lmi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,115,42,0.10);
+      border: 1px solid rgba(232,115,42,0.30);
+      border-radius: 40px;
+      padding: 8px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      padding: 44px 24px;
+      border-left: 5px solid var(--orange);
+      background: var(--light-bg);
+    }
+    .pull-quote.right {
+      border-left: none;
+      border-right: 5px solid var(--orange);
+      text-align: right;
+      background: var(--white);
+    }
+    .pull-quote-inner { max-width: 860px; margin: 0 auto; }
+    .pull-quote blockquote {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17.5px;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.55;
+      font-style: italic;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 12px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: normal;
+    }
+    .stars { color: var(--orange); letter-spacing: 2px; }
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works { background: var(--light-bg); padding: 64px 24px; }
+    .how-it-works-inner { max-width: 1200px; margin: 0 auto; }
+    .how-it-works-inner .section-h2 { margin-bottom: 32px; }
+    .example-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--orange);
+      border-radius: 4px;
+      padding: 32px 36px;
+      max-width: 780px;
+    }
+    .example-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .example-box p {
+      font-size: 15.5px;
+      color: var(--text);
+      line-height: 1.75;
+    }
+    .example-savings {
+      display: flex;
+      gap: 24px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .saving-item {
+      background: var(--light-bg);
+      border-radius: 4px;
+      padding: 14px 20px;
+      text-align: center;
+      min-width: 140px;
+    }
+    .saving-item .amount {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--orange);
+      display: block;
+    }
+    .saving-item .label {
+      font-size: 12.5px;
+      color: var(--muted);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ── WHO QUALIFIES ── */
+    .who-qualifies { background: var(--white); padding: 64px 24px; }
+    .who-qualifies-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .who-body .section-h2 { margin-bottom: 16px; }
+    .who-body > p { font-size: 15.5px; color: var(--text); line-height: 1.75; margin-bottom: 20px; }
+    .profession-list { list-style: none; margin-bottom: 20px; }
+    .profession-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--text);
+    }
+    .profession-list li:first-child { border-top: 1px solid var(--border); }
+    .profession-list li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .who-note {
+      background: var(--light-bg);
+      border-radius: 4px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .conditions-box {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 32px;
+    }
+    .conditions-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .conditions-box p {
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .conditions-box p:last-child { margin-bottom: 0; }
+
+    /* ── FAQs ── */
+    .faqs { background: var(--light-bg); padding: 64px 24px; }
+    .faqs-inner { max-width: 860px; margin: 0 auto; }
+    .faqs-inner .section-h2 { margin-bottom: 32px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-of-type { border-top: 1px solid var(--border); }
+    .faq-item input[type="checkbox"] { display: none; }
+    .faq-q {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0;
+    }
+    .faq-q::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--orange); flex-shrink: 0; line-height: 1; }
+    .faq-item input:checked ~ .faq-q::after { content: '\2212'; }
+    .faq-a {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+    }
+    .faq-item input:checked ~ .faq-a { max-height: 300px; padding-bottom: 18px; }
+    .faq-cta { margin-top: 32px; }
+    .faq-cta p { font-size: 15px; color: var(--muted); margin-bottom: 14px; }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer { background: var(--white); padding: 28px 24px; }
+    .disclaimer p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 12.5px;
+      color: #999;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta { background: var(--orange); padding: 64px 24px; }
+    .final-cta-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+    .final-cta h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(24px, 4vw, 36px);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .final-cta p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer { background: var(--footer-bg); padding: 20px 24px; }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.5); }
+    .footer-legal { font-size: 12.5px; color: rgba(255,255,255,0.5); display: flex; gap: 16px; align-items: center; }
+    .footer-legal a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-legal a:hover { color: var(--orange); }
+
+    @media (max-width: 900px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .intro-image { display: none; }
+      .who-qualifies-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .hero { height: 460px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="https://www.bangoninvestments.com.au/wp-content/uploads/2022/06/bang-on-investments-logo-main.png" alt="Bang On Investments">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/information" class="nav-has-arrow">Information</a></li>
+      <li class="nav-dropdown">
+        <a href="/services" class="nav-has-arrow">Our Services</a>
+        <div class="dropdown-menu">
+          <a href="home-loans.html">Home Loans</a>
+          <a href="investment-loans.html">Investment Loans</a>
+          <a href="business-loans.html">Business Loans</a>
+          <a href="vehicle-loans.html">Vehicle Loans</a>
+          <a href="refinancing.html">Refinancing</a>
+          <a href="commercial-property-loans.html">Commercial Property Loans</a>
+          <a href="self-employed-home-loans.html">Self-Employed Home Loans</a>
+          <a href="home-loans-for-nurses.html">Home Loans for Nurses</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="medical-loans.html" class="nav-has-arrow active">Medical Professionals</a>
+        <div class="dropdown-menu">
+          <a href="medical-loans.html">Medical Loans Overview</a>
+          <a href="home-loans-for-doctors.html">Home Loans for Doctors</a>
+          <a href="nurses-home-loans.html">Home Loans for Nurses</a>
+          <a href="lmi-waiver.html" class="active">LMI Waiver</a>
+          <a href="medical-business-loans.html">Business Finance</a>
+        </div>
+      </li>
+      <li><a href="/tools" class="nav-has-arrow">Tools</a></li>
+      <li><a href="/contact" class="nav-has-arrow">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Save Up to $40,000
+    </div>
+    <h1>LMI Waiver for Medical Professionals — Buy Sooner, Save Thousands</h1>
+    <p class="hero-sub">As a medical professional, you may qualify to borrow up to 90–95% of a property's value without paying Lenders Mortgage Insurance — saving you up to $40,000 and letting you buy years sooner.</p>
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-call">Check Your LMI Waiver Eligibility</a>
+      <a href="tel:+61414406887" class="btn-contact" style="border-color:rgba(255,255,255,0.7);color:#fff;background:rgba(255,255,255,0.12);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTRO ── -->
+<section class="intro-section">
+  <div class="intro-grid">
+    <div class="intro-body">
+      <div class="lmi-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Borrow up to 90–95% LVR with no LMI
+      </div>
+      <h2 class="section-h2">What Is an LMI Waiver — and Why Does It Matter?</h2>
+      <p>Lenders Mortgage Insurance (LMI) is a cost charged by lenders when you borrow more than 80% of a property's value. It's designed to protect the lender — not you — and can add $15,000 to $40,000 or more to the cost of buying a home, depending on your loan size and LVR.</p>
+      <p>For most buyers, avoiding LMI means saving a 20% deposit — which in Sydney's property market can take years. But if you're a medical professional, you may be able to borrow up to 90–95% of the property value without paying LMI at all. This is one of the most valuable financial benefits available to doctors, dentists, nurses and other healthcare workers — and many are unaware it exists.</p>
+      <p>At Bang On Investments, we have specialist knowledge in both medicine and finance. We know which lenders offer the best LMI waiver products for each profession, and we'll match you to the right one for your situation.</p>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+        <a href="mailto:support@bangoninvestments.com.au" class="btn-contact">Email Us</a>
+      </div>
+    </div>
+    <div class="intro-image">
+      <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=760&q=80" alt="LMI waiver for medical professionals Sydney">
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE 1 ── -->
+<section class="pull-quote">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang helped make the entire experience feel less painful. Their knowledge was second to none and the customer service was excellent."</blockquote>
+    <cite>Josh R &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-it-works">
+  <div class="how-it-works-inner">
+    <h2 class="section-h2">How an LMI Waiver Works in Practice</h2>
+    <div class="example-box" style="margin-top:28px;">
+      <h3>A Real-World Example</h3>
+      <p>A doctor buying a $1.2M property in Sydney with a 10% deposit ($120,000) would typically face an LMI cost of approximately $25,000–$35,000 on a standard loan. With a Medico LMI waiver, that cost is eliminated entirely — meaning the same $120,000 deposit buys the same property with no additional insurance premium.</p>
+      <div class="example-savings">
+        <div class="saving-item">
+          <span class="amount">$1.2M</span>
+          <span class="label">Property value</span>
+        </div>
+        <div class="saving-item">
+          <span class="amount">10%</span>
+          <span class="label">Deposit required</span>
+        </div>
+        <div class="saving-item">
+          <span class="amount">$0</span>
+          <span class="label">LMI cost with waiver</span>
+        </div>
+        <div class="saving-item">
+          <span class="amount">$35,000+</span>
+          <span class="label">Typical saving</span>
+        </div>
+      </div>
+    </div>
+    <div class="cta-buttons" style="margin-top:28px;">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Want to run the numbers? Call 0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO QUALIFIES + CONDITIONS ── -->
+<section class="who-qualifies">
+  <div class="who-qualifies-inner">
+    <div class="who-body">
+      <h2 class="section-h2">Who Qualifies for an LMI Waiver?</h2>
+      <p>LMI waiver eligibility varies by lender, but typically includes the following registered professionals:</p>
+      <ul class="profession-list">
+        <li>General Practitioners (GPs)</li>
+        <li>Medical Specialists</li>
+        <li>Hospital-Employed Doctors</li>
+        <li>Dentists and Dental Specialists</li>
+        <li>Pharmacists</li>
+        <li>Optometrists</li>
+        <li>Nurses and Allied Health Professionals (lender dependent)</li>
+        <li>Interns and Residents (select lenders)</li>
+      </ul>
+      <div class="who-note">Eligibility also depends on your income, registration status, loan amount and LVR. We'll confirm your eligibility quickly across our panel of specialist lenders.</div>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Not sure if you qualify? Call 0414 406 887
+        </a>
+      </div>
+    </div>
+    <div class="conditions-box">
+      <h3>What Are the Conditions of an LMI Waiver?</h3>
+      <p>LMI waivers for medical professionals are subject to lender-specific conditions, which typically include:</p>
+      <ul class="profession-list" style="margin-bottom:16px;">
+        <li>Borrowing up to 90% LVR (some lenders extend to 95%)</li>
+        <li>Purchasing a standard residential property</li>
+        <li>Meeting minimum income requirements</li>
+        <li>Being currently registered with the relevant professional body</li>
+      </ul>
+      <p>Conditions vary between lenders — and the best available product for one profession may not be the best for another. This is where working with a specialist broker makes a real difference. We know the policies of each lender on our panel and will match you to the right one.</p>
+      <div class="cta-buttons" style="margin-top:20px;">
+        <a href="tel:+61414406887" class="btn-call" style="font-size:13.5px;padding:11px 22px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Discuss your conditions — call 0414 406 887
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE 2 ── -->
+<section class="pull-quote right">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang and the team were so fantastic to work with. Their professionalism made for a fantastic process and we felt supported every step of the way."</blockquote>
+    <cite>Xanthe L &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── FAQs ── -->
+<section class="faqs">
+  <div class="faqs-inner">
+    <h2 class="section-h2">LMI Waiver FAQs</h2>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq1">
+      <label class="faq-q" for="faq1">How much can an LMI waiver save me?</label>
+      <div class="faq-a">It depends on your loan size and LVR, but LMI costs typically range from $8,000 to $40,000+ for loans between $500,000 and $1.5M. An LMI waiver eliminates this cost entirely — meaning that money stays in your pocket or can go towards your deposit.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq2">
+      <label class="faq-q" for="faq2">Can I get an LMI waiver if I'm still in training?</label>
+      <div class="faq-a">Some lenders extend LMI waivers to interns and residents, subject to criteria such as a signed employment contract and minimum income level. We know which lenders are most flexible for doctors in training — call us to check your eligibility.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq3">
+      <label class="faq-q" for="faq3">Does the LMI waiver apply to investment properties?</label>
+      <div class="faq-a">Some lenders extend LMI waivers to investment purchases as well as owner-occupied homes, though conditions differ. We'll confirm what's available for investment purposes based on your profession and lender options.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq4">
+      <label class="faq-q" for="faq4">Do nurses qualify for an LMI waiver?</label>
+      <div class="faq-a">Some lenders do extend concessions to nurses and allied health professionals, though the waiver limit may be lower than for doctors. We'll check your eligibility across our full lender panel and tell you exactly what's available.</div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq5">
+      <label class="faq-q" for="faq5">Is the LMI waiver automatic or do I need to apply for it?</label>
+      <div class="faq-a">It's not automatic — you need to apply through a lender who offers it, and your broker needs to know to request it. This is one of the most common things overlooked when medical professionals go directly to a bank. We ensure every eligible client gets the benefit they're entitled to.</div>
+    </div>
+
+    <div class="faq-cta">
+      <p>Have a question about LMI waivers?</p>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+        <a href="mailto:support@bangoninvestments.com.au" class="btn-contact">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DISCLAIMER ── -->
+<section class="disclaimer">
+  <p>Please note that every client's situation is unique and terms and conditions apply. Contact us to initiate a full application assessment to determine an outcome.</p>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Find Out If You Qualify Today</h2>
+    <p>An LMI waiver could save you tens of thousands of dollars and get you into your home years sooner. Get in touch for a free, no-obligation eligibility check — it takes minutes and could make a significant difference.</p>
+    <div class="cta-buttons centered">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+      <a href="mailto:support@bangoninvestments.com.au" class="btn-contact">Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 Bang On Investments | All Rights Reserved</span>
+    <div class="footer-legal">
+      <span>Australian Credit Licence No. 394371</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
