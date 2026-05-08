@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Loan Repayment Calculator | Bang On Investments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #E8732A;
+      --orange-dark: #C95E1A;
+      --dark: #1C1C1E;
+      --text: #333333;
+      --muted: #666666;
+      --light-bg: #F8F7F5;
+      --border: #E0E0E0;
+      --footer-bg: #252527;
+      --white: #ffffff;
+    }
+
+    body { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: var(--text); line-height: 1.7; }
+
+    /* ── NAV ── */
+    nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 52px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 500; padding: 8px 12px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--orange); background: rgba(232,115,42,0.06); }
+    .nav-links .nav-has-arrow::after { content: ' \25BE'; font-size: 10px; opacity: 0.6; }
+    .nav-links a.active { color: var(--orange); }
+    .nav-dropdown { position: relative; }
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: var(--white); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 8px 28px rgba(0,0,0,0.11); padding: 6px 0; z-index: 200; }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 16px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none; transition: background 0.15s, color 0.15s; background: none; border-radius: 0; }
+    .dropdown-menu a:hover { background: rgba(232,115,42,0.06); color: var(--orange); }
+    .dropdown-menu a::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background 0.15s; }
+    .dropdown-menu a:hover::before { background: var(--orange); }
+    .dropdown-menu a.active { color: var(--orange); }
+    .dropdown-menu a.active::before { background: var(--orange); }
+
+    /* ── HERO ── */
+    .hero { position: relative; height: 400px; background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=80') center 50% / cover no-repeat; display: flex; align-items: flex-end; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,20,20,0.28) 0%, rgba(20,20,20,0.84) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 52px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(232,115,42,0.88); border-radius: 3px; padding: 5px 13px; font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 700; color: var(--white); letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 14px; }
+    .hero h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(26px, 3.8vw, 42px); color: var(--white); line-height: 1.15; max-width: 720px; margin-bottom: 14px; }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.88); max-width: 620px; line-height: 1.6; margin-bottom: 24px; }
+
+    /* ── SHARED ── */
+    .section-h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(20px, 3vw, 28px); color: var(--dark); line-height: 1.25; }
+
+    /* ── CTA BUTTONS ── */
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .cta-buttons.centered { justify-content: center; }
+    .btn-call { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white) !important; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14.5px; padding: 13px 28px; border-radius: 4px; text-decoration: none; letter-spacing: 0.2px; box-shadow: 0 3px 10px rgba(232,115,42,0.30); transition: background 0.2s, transform 0.15s, box-shadow 0.2s; }
+    .btn-call svg { color: var(--white) !important; flex-shrink: 0; }
+    .btn-call:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(232,115,42,0.38); }
+    .btn-contact { display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--dark); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14.5px; padding: 12px 28px; border-radius: 4px; border: 2px solid var(--dark); text-decoration: none; letter-spacing: 0.2px; transition: background 0.2s, color 0.2s, transform 0.15s; }
+    .btn-contact:hover { background: var(--dark); color: var(--white); transform: translateY(-2px); }
+    .final-cta .btn-call { background: var(--dark); box-shadow: none; }
+    .final-cta .btn-call:hover { background: #000; }
+    .final-cta .btn-contact { border-color: var(--white); color: var(--white); background: transparent; }
+    .final-cta .btn-contact:hover { background: var(--white); color: var(--dark); }
+
+    /* ── INTRO ── */
+    .intro-section { background: var(--white); padding: 64px 24px; }
+    .intro-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: start; }
+    .intro-body .section-h2 { margin-bottom: 20px; }
+    .intro-body p { font-size: 15.5px; color: var(--text); margin-bottom: 16px; line-height: 1.75; }
+    .intro-image img { width: 100%; height: 320px; object-fit: cover; border-radius: 4px; display: block; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+    .intro-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(232,115,42,0.10); border: 1px solid rgba(232,115,42,0.30); border-radius: 40px; padding: 8px 18px; font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 700; color: var(--orange); margin-bottom: 20px; }
+
+    /* ── CALCULATOR SECTION ── */
+    .calculator-section { background: var(--light-bg); padding: 64px 24px; }
+    .calc-header { max-width: 1060px; margin: 0 auto 32px; }
+    .calc-header .section-h2 { margin-bottom: 8px; }
+    .calc-header p { font-size: 15px; color: var(--muted); }
+    .calc-card { background: var(--white); border-radius: 8px; box-shadow: 0 6px 36px rgba(0,0,0,0.09); border: 1px solid var(--border); padding: 44px; max-width: 1060px; margin: 0 auto; }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
+
+    /* Inputs */
+    .calc-col-label { font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 28px; padding-bottom: 12px; border-bottom: 1.5px solid var(--border); }
+    .input-group { margin-bottom: 28px; }
+    .input-group:last-child { margin-bottom: 0; }
+    .input-group > label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: var(--dark); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 9px; }
+    .input-row { display: flex; align-items: center; background: var(--light-bg); border: 1.5px solid var(--border); border-radius: 5px; overflow: hidden; transition: border-color 0.2s; }
+    .input-row:focus-within { border-color: var(--orange); background: #fff; }
+    .input-prefix { padding: 0 11px; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--muted); flex-shrink: 0; user-select: none; }
+    .input-suffix { padding: 0 11px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: var(--muted); flex-shrink: 0; user-select: none; }
+    .num-field { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: var(--dark); border: none; outline: none; padding: 11px 8px 11px 0; width: 100%; background: transparent; min-width: 0; }
+    select.num-field { cursor: pointer; -webkit-appearance: none; appearance: none; background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") right 12px center / 14px no-repeat; padding-right: 36px; padding-left: 14px; }
+    .range-wrap { margin-top: 10px; }
+    input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; border-radius: 2px; background: var(--border); cursor: pointer; outline: none; display: block; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--orange); cursor: pointer; box-shadow: 0 1px 6px rgba(232,115,42,0.45); transition: transform 0.1s; }
+    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.18); }
+    input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--orange); cursor: pointer; border: none; box-shadow: 0 1px 6px rgba(232,115,42,0.45); }
+    .range-labels { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; margin-top: 4px; }
+
+    /* Results panel */
+    .freq-toggle { display: flex; border: 1.5px solid var(--orange); border-radius: 5px; overflow: hidden; margin-bottom: 22px; }
+    .freq-btn { flex: 1; background: var(--white); color: var(--orange); border: none; padding: 10px 6px; font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 700; cursor: pointer; letter-spacing: 0.2px; transition: background 0.15s, color 0.15s; }
+    .freq-btn + .freq-btn { border-left: 1.5px solid var(--orange); }
+    .freq-btn.active { background: var(--orange); color: var(--white); }
+    .primary-result { background: var(--light-bg); border-radius: 6px; border-left: 4px solid var(--orange); padding: 22px 24px 18px; margin-bottom: 18px; }
+    .primary-lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 6px; }
+    .primary-amt { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 800; color: var(--orange); line-height: 1; margin-bottom: 4px; }
+    .primary-note { font-size: 12px; color: var(--muted); font-style: italic; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-box { background: var(--light-bg); border: 1px solid var(--border); border-radius: 5px; padding: 14px 16px; }
+    .stat-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 4px; }
+    .stat-val { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; color: var(--dark); }
+    .stat-box.is-total .stat-val { color: var(--orange); }
+
+    /* ── CALCULATOR NOTE ── */
+    .calc-note { background: var(--white); padding: 18px 24px 28px; }
+    .calc-note p { max-width: 1060px; margin: 0 auto; font-size: 12.5px; color: #999; font-style: italic; line-height: 1.6; }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote { padding: 44px 24px; border-left: 5px solid var(--orange); background: var(--light-bg); }
+    .pull-quote.right { border-left: none; border-right: 5px solid var(--orange); text-align: right; background: var(--white); }
+    .pull-quote-inner { max-width: 860px; margin: 0 auto; }
+    .pull-quote blockquote { font-family: 'Montserrat', sans-serif; font-size: 17.5px; font-weight: 500; color: var(--dark); line-height: 1.55; font-style: italic; }
+    .pull-quote cite { display: block; margin-top: 12px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: var(--muted); font-style: normal; }
+    .stars { color: var(--orange); letter-spacing: 2px; }
+
+    /* ── WHAT WE FINANCE ── */
+    .finance-types { background: var(--white); padding: 64px 24px; }
+    .finance-types-inner { max-width: 1200px; margin: 0 auto; }
+    .finance-types-inner .section-h2 { margin-bottom: 10px; }
+    .finance-types-inner > p { font-size: 15.5px; color: var(--muted); margin-bottom: 32px; line-height: 1.7; }
+    .finance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .finance-item { display: flex; align-items: center; gap: 12px; background: var(--light-bg); border: 1px solid var(--border); border-radius: 5px; padding: 14px 16px; font-size: 14.5px; color: var(--text); font-weight: 500; }
+    .finance-item::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works { background: var(--light-bg); padding: 64px 24px; }
+    .how-it-works-inner { max-width: 1200px; margin: 0 auto; }
+    .how-it-works-inner .section-h2 { margin-bottom: 10px; }
+    .how-it-works-inner > p { font-size: 15.5px; color: var(--muted); margin-bottom: 32px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .step-card { background: var(--white); border-radius: 6px; padding: 28px 22px 24px; border: 1px solid var(--border); }
+    .step-num { font-family: 'Montserrat', sans-serif; font-size: 52px; font-weight: 800; color: var(--orange); opacity: 0.14; line-height: 1; margin-bottom: 14px; }
+    .step-card h3 { font-family: 'Montserrat', sans-serif; font-size: 14.5px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.3; }
+    .step-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    /* ── FAQs ── */
+    .faqs { background: var(--white); padding: 64px 24px; }
+    .faqs-inner { max-width: 860px; margin: 0 auto; }
+    .faqs-inner .section-h2 { margin-bottom: 32px; }
+    details { border-bottom: 1px solid var(--border); }
+    details:first-of-type { border-top: 1px solid var(--border); }
+    summary { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 15px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--orange); flex-shrink: 0; line-height: 1; }
+    details[open] summary::after { content: '\2212'; }
+    .faq-body { font-size: 15px; color: var(--muted); line-height: 1.7; padding-bottom: 18px; }
+
+    /* ── FINAL CTA ── */
+    .final-cta { background: var(--orange); padding: 64px 24px; }
+    .final-cta-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+    .final-cta h2 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(24px, 4vw, 36px); color: var(--white); line-height: 1.15; margin-bottom: 14px; }
+    .final-cta p { font-size: 16px; color: rgba(255,255,255,0.88); margin-bottom: 28px; line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--footer-bg); padding: 20px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.5); }
+    .footer-legal { font-size: 12.5px; color: rgba(255,255,255,0.5); display: flex; gap: 16px; align-items: center; }
+    .footer-legal a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-legal a:hover { color: var(--orange); }
+    a.inline-link { color: var(--orange); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(232,115,42,0.35); }
+    a.inline-link:hover { border-bottom-color: var(--orange); }
+
+    @media (max-width: 960px) {
+      .calc-grid { grid-template-columns: 1fr; gap: 36px; }
+      .finance-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 760px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .intro-image { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero { height: 460px; }
+      .nav-links { display: none; }
+      .finance-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .calc-card { padding: 28px 20px; }
+      .primary-amt { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="https://www.bangoninvestments.com.au/wp-content/uploads/2022/06/bang-on-investments-logo-main.png" alt="Bang On Investments">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/information" class="nav-has-arrow">Information</a></li>
+      <li class="nav-dropdown">
+        <a href="/services" class="nav-has-arrow">Our Services</a>
+        <div class="dropdown-menu">
+          <a href="home-loans.html">Home Loans</a>
+          <a href="investment-loans.html">Investment Loans</a>
+          <a href="business-loans.html">Business Loans</a>
+          <a href="vehicle-loans.html">Vehicle Loans</a>
+          <a href="refinancing.html">Refinancing</a>
+          <a href="commercial-property-loans.html">Commercial Property Loans</a>
+          <a href="self-employed-home-loans.html">Self-Employed Home Loans</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="medical-loans.html" class="nav-has-arrow">Medical Professionals</a>
+        <div class="dropdown-menu">
+          <a href="medical-loans.html">Medical Loans Overview</a>
+          <a href="home-loans-for-doctors.html">Home Loans for Doctors</a>
+          <a href="nurses-home-loans.html">Home Loans for Nurses</a>
+          <a href="lmi-waiver.html">LMI Waiver</a>
+          <a href="medical-business-loans.html">Business Finance</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/tools" class="nav-has-arrow active">Tools</a>
+        <div class="dropdown-menu">
+          <a href="vehicle-loan-repayment-calculator.html" class="active">Vehicle Loan Calculator</a>
+        </div>
+      </li>
+      <li><a href="/contact" class="nav-has-arrow">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10.2C17.4 9.5 16.7 9 16 9H4c-1.1 0-2 .9-2 2v5c0 .6.4 1 1 1h2a3 3 0 006 0h4a3 3 0 006 0zm-5-9h-3V6H9v2H6c-.6 0-1 .4-1 1H4V9h-.5C3.2 9 3 9.2 3 9.5v.5h18v-.5c0-.3-.2-.5-.5-.5H19V8c0-.6-.4-1-1-1h-4z"/></svg>
+      Free Repayment Calculator
+    </div>
+    <h1>Vehicle Loan Repayment Calculator</h1>
+    <p class="hero-sub">See your estimated monthly, fortnightly and weekly repayments in real time. Adjust the loan amount, term and rate, then speak to us for a personalised vehicle finance quote.</p>
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-call">Get in Touch</a>
+      <a href="tel:+61414406887" class="btn-contact" style="border-color:rgba(255,255,255,0.7);color:#fff;background:rgba(255,255,255,0.12);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTRO ── -->
+<section class="intro-section">
+  <div class="intro-grid">
+    <div class="intro-body">
+      <div class="intro-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Compare rates from 25+ lenders
+      </div>
+      <h2 class="section-h2">How Much Will Your Vehicle Loan Cost Each Month?</h2>
+      <p>Whether you're buying a new car, a used vehicle, a motorcycle or financing a commercial fleet, knowing your repayments before you commit is an important first step. Enter your loan details below to get an instant estimate.</p>
+      <p>This calculator is a guide only — your actual repayments will depend on the rate you're offered, which varies based on your credit profile, the vehicle type, its age and the lender. Bang On Investments compares vehicle loan options from 25+ lenders to find the most competitive rate for your situation.</p>
+      <p>Once you've run the numbers, speak to us for a personalised quote. There's no obligation and the comparison is completely free.</p>
+      <div class="cta-buttons">
+        <a href="/contact-us/" class="btn-call">Get in Touch</a>
+        <a href="tel:+61414406887" class="btn-contact">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+      </div>
+    </div>
+    <div class="intro-image">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=720&q=80" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- ── CALCULATOR ── -->
+<section class="calculator-section">
+  <div class="calc-header">
+    <h2 class="section-h2">Vehicle Loan Repayment Calculator</h2>
+    <p>Adjust any field to see your repayments update instantly.</p>
+  </div>
+  <div class="calc-card">
+    <div class="calc-grid">
+
+      <!-- INPUTS -->
+      <div class="calc-inputs">
+        <div class="calc-col-label">Your Loan Details</div>
+
+        <!-- Loan Amount -->
+        <div class="input-group">
+          <label for="loanAmount">Loan Amount</label>
+          <div class="input-row">
+            <span class="input-prefix">$</span>
+            <input class="num-field" type="number" id="loanAmount" value="20000" min="5000" max="150000" step="1000">
+          </div>
+          <div class="range-wrap">
+            <input type="range" id="loanAmountSlider" min="5000" max="150000" step="1000" value="20000">
+            <div class="range-labels"><span>$5,000</span><span>$150,000</span></div>
+          </div>
+        </div>
+
+        <!-- Loan Term -->
+        <div class="input-group">
+          <label for="loanTerm">Loan Term</label>
+          <div class="input-row">
+            <select class="num-field" id="loanTerm">
+              <option value="1">1 year</option>
+              <option value="2">2 years</option>
+              <option value="3">3 years</option>
+              <option value="4">4 years</option>
+              <option value="5" selected>5 years</option>
+              <option value="7">7 years</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Interest Rate -->
+        <div class="input-group">
+          <label for="interestRate">Interest Rate</label>
+          <div class="input-row">
+            <input class="num-field" type="number" id="interestRate" value="7.5" min="3" max="20" step="0.1" style="padding-left:14px;">
+            <span class="input-suffix">% p.a.</span>
+          </div>
+          <div class="range-wrap">
+            <input type="range" id="interestRateSlider" min="3" max="20" step="0.1" value="7.5">
+            <div class="range-labels"><span>3%</span><span>20%</span></div>
+          </div>
+        </div>
+
+        <!-- Balloon -->
+        <div class="input-group">
+          <label for="balloon">Balloon / Residual <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);font-size:11px;">(optional)</span></label>
+          <div class="input-row">
+            <span class="input-prefix">$</span>
+            <input class="num-field" type="number" id="balloon" value="0" min="0" step="500" placeholder="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="calc-results">
+        <div class="calc-col-label">Your Estimated Repayments</div>
+
+        <div class="freq-toggle" role="group">
+          <button class="freq-btn active" data-freq="monthly">Monthly</button>
+          <button class="freq-btn" data-freq="fortnightly">Fortnightly</button>
+          <button class="freq-btn" data-freq="weekly">Weekly</button>
+        </div>
+
+        <div class="primary-result">
+          <div class="primary-lbl" id="primaryLbl">Estimated per month</div>
+          <div class="primary-amt" id="primaryAmt">$0</div>
+          <div class="primary-note" id="primaryNote">Based on 5 year term at 7.5% p.a.</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box" id="stat-monthly">
+            <div class="stat-lbl">Monthly</div>
+            <div class="stat-val" id="statMonthly">$0</div>
+          </div>
+          <div class="stat-box" id="stat-fortnightly">
+            <div class="stat-lbl">Fortnightly</div>
+            <div class="stat-val" id="statFortnightly">$0</div>
+          </div>
+          <div class="stat-box" id="stat-weekly">
+            <div class="stat-lbl">Weekly</div>
+            <div class="stat-val" id="statWeekly">$0</div>
+          </div>
+          <div class="stat-box is-total">
+            <div class="stat-lbl">Total Interest</div>
+            <div class="stat-val" id="statInterest">$0</div>
+          </div>
+          <div class="stat-box is-total" style="grid-column:span 2;">
+            <div class="stat-lbl">Total Amount Payable</div>
+            <div class="stat-val" id="statTotal">$0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CALCULATOR NOTE ── -->
+<div class="calc-note">
+  <p>This calculator provides indicative estimates only and does not constitute a loan offer, credit approval or financial advice. Repayments are calculated using the standard amortisation formula and assume a fixed interest rate for the full loan term. Actual repayments will vary depending on the lender, interest rate, fees, charges and your personal financial circumstances. For personalised advice, speak to a licensed finance broker. Bang On Investments Pty Ltd is a credit representative of a licensed Australian credit licensee.</p>
+</div>
+
+<!-- ── TESTIMONIAL 1 ── -->
+<section class="pull-quote">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang made the whole vehicle finance process so easy. We got a better rate than our bank was offering and the car was in the driveway within the week."</blockquote>
+    <cite>Chris W &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── WHAT WE FINANCE ── -->
+<section class="finance-types">
+  <div class="finance-types-inner">
+    <h2 class="section-h2">What We Finance</h2>
+    <p>We arrange competitive vehicle finance for personal and business purposes across a wide range of vehicle types.</p>
+    <div class="finance-grid">
+      <div class="finance-item">New cars &amp; passenger vehicles</div>
+      <div class="finance-item">Used &amp; pre-owned vehicles</div>
+      <div class="finance-item">Motorcycles &amp; recreational vehicles</div>
+      <div class="finance-item">Electric &amp; hybrid vehicles</div>
+      <div class="finance-item">Utes, vans &amp; light commercial</div>
+      <div class="finance-item">Trucks, prime movers &amp; trailers</div>
+      <div class="finance-item">Caravans &amp; motorhomes</div>
+      <div class="finance-item">Boats &amp; watercraft</div>
+    </div>
+    <div class="cta-buttons" style="margin-top:32px;">
+      <a href="/contact-us/" class="btn-call">Get in Touch</a>
+      <a href="tel:+61414406887" class="btn-contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-it-works">
+  <div class="how-it-works-inner">
+    <h2 class="section-h2">How Vehicle Finance Works with Bang On</h2>
+    <p>From first enquiry to driving away — here's what to expect.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Tell Us What You Need</h3>
+        <p>Share the vehicle type, purchase price, your preferred deposit and term. We'll ask a few quick questions about your situation.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>We Compare Your Options</h3>
+        <p>We search 25+ lenders — banks, non-bank and specialist vehicle finance providers — to find the most competitive rate for your profile.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Fast Approval</h3>
+        <p>We submit your application and manage the process end to end. Many vehicle loans are approved within 24–48 hours.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Drive Away</h3>
+        <p>Finance is settled directly with the dealer or private seller. You get the keys — we handle the paperwork.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIAL 2 ── -->
+<section class="pull-quote right">
+  <div class="pull-quote-inner">
+    <blockquote>"Sorted our car loan in a couple of days. Bang On shopped around and got us a rate we couldn't have found on our own — and with none of the usual back and forth."</blockquote>
+    <cite>Xanthe L &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── FAQs ── -->
+<section class="faqs">
+  <div class="faqs-inner">
+    <h2 class="section-h2">Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How is my vehicle loan repayment calculated?</summary>
+      <div class="faq-body">Your repayment is calculated using the standard amortisation formula, based on your loan amount (minus any balloon payment), the interest rate and the loan term. The figure shown is an estimate — your actual repayment may differ slightly depending on how your lender calculates interest (daily or monthly) and any applicable fees.</div>
+    </details>
+
+    <details>
+      <summary>What is a balloon payment or residual?</summary>
+      <div class="faq-body">A balloon payment (also called a residual) is a lump sum due at the end of your loan term. Including one lowers your regular repayments but means a larger amount is owed at maturity — paid in cash, by refinancing or from the proceeds of selling the vehicle. Balloon payments are common in business vehicle finance structures such as chattel mortgage.</div>
+    </details>
+
+    <details>
+      <summary>What interest rate should I enter?</summary>
+      <div class="faq-body">Use an indicative rate as a starting point. Personal vehicle loan rates typically range from around 6% to 15%+ depending on your credit profile, the vehicle's age and the lender. Business vehicle finance (chattel mortgage, novated lease) may attract different rates. Contact us for a personalised rate estimate before committing.</div>
+    </details>
+
+    <details>
+      <summary>Can I get pre-approved before I choose a vehicle?</summary>
+      <div class="faq-body">Yes. We can arrange a pre-approval so you know your borrowing capacity before you start shopping. This puts you in a stronger negotiating position with dealers and private sellers — and speeds up the settlement process once you've found the right vehicle.</div>
+    </details>
+
+    <details>
+      <summary>How do I get the best vehicle loan rate?</summary>
+      <div class="faq-body">Rates are generally lowest for newer vehicles, borrowers with strong credit profiles and shorter loan terms. We compare options across 25+ lenders to find the most competitive rate available for your specific situation — often significantly better than going direct to a bank or accepting dealership finance.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Ready to Finance Your Next Vehicle?</h2>
+    <p>Use this calculator as your starting point, then speak to our team for a personalised rate and the most competitive vehicle finance package available from 25+ lenders.</p>
+    <div class="cta-buttons centered">
+      <a href="/contact-us/" class="btn-call">Get in Touch</a>
+      <a href="tel:+61414406887" class="btn-contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 Bang On Investments. All rights reserved.</span>
+    <div class="footer-legal">
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/credit-guide/">Credit Guide</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const loanAmountEl   = document.getElementById('loanAmount');
+  const loanSliderEl   = document.getElementById('loanAmountSlider');
+  const loanTermEl     = document.getElementById('loanTerm');
+  const rateEl         = document.getElementById('interestRate');
+  const rateSliderEl   = document.getElementById('interestRateSlider');
+  const balloonEl      = document.getElementById('balloon');
+
+  const primaryLblEl   = document.getElementById('primaryLbl');
+  const primaryAmtEl   = document.getElementById('primaryAmt');
+  const primaryNoteEl  = document.getElementById('primaryNote');
+  const statMonthly    = document.getElementById('statMonthly');
+  const statFortnightly= document.getElementById('statFortnightly');
+  const statWeekly     = document.getElementById('statWeekly');
+  const statInterest   = document.getElementById('statInterest');
+  const statTotal      = document.getElementById('statTotal');
+
+  let activeFreq = 'monthly';
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-AU');
+  }
+
+  function setSliderFill(slider) {
+    const min = parseFloat(slider.min);
+    const max = parseFloat(slider.max);
+    const val = parseFloat(slider.value);
+    const pct = ((val - min) / (max - min)) * 100;
+    slider.style.background = `linear-gradient(to right, var(--orange) ${pct}%, var(--border) ${pct}%)`;
+  }
+
+  function calculate() {
+    const loanAmt  = Math.max(0, parseFloat(loanAmountEl.value) || 0);
+    const termYrs  = parseInt(loanTermEl.value) || 5;
+    const annualR  = Math.max(0, parseFloat(rateEl.value) || 0);
+    const balloon  = Math.max(0, Math.min(parseFloat(balloonEl.value) || 0, loanAmt));
+    const n        = termYrs * 12;
+    const r        = annualR / 100 / 12;
+    const P        = loanAmt - balloon;
+
+    let monthly;
+    if (r === 0) {
+      monthly = n > 0 ? P / n : 0;
+    } else {
+      monthly = P * r / (1 - Math.pow(1 + r, -n));
+    }
+
+    const fortnightly  = monthly * 12 / 26;
+    const weekly       = monthly * 12 / 52;
+    const totalPayable = (monthly * n) + balloon;
+    const totalInterest= Math.max(0, totalPayable - loanAmt);
+
+    statMonthly.textContent     = fmt(monthly);
+    statFortnightly.textContent = fmt(fortnightly);
+    statWeekly.textContent      = fmt(weekly);
+    statInterest.textContent    = fmt(totalInterest);
+    statTotal.textContent       = fmt(totalPayable);
+
+    const freqMap = {
+      monthly:     { lbl: 'Estimated per month',      val: monthly },
+      fortnightly: { lbl: 'Estimated per fortnight',  val: fortnightly },
+      weekly:      { lbl: 'Estimated per week',        val: weekly }
+    };
+    primaryLblEl.textContent  = freqMap[activeFreq].lbl;
+    primaryAmtEl.textContent  = fmt(freqMap[activeFreq].val);
+    primaryNoteEl.textContent = `Based on ${termYrs} year term at ${annualR}% p.a.`;
+  }
+
+  /* Loan amount slider/input sync */
+  loanSliderEl.addEventListener('input', () => {
+    loanAmountEl.value = loanSliderEl.value;
+    setSliderFill(loanSliderEl);
+    calculate();
+  });
+  loanAmountEl.addEventListener('input', () => {
+    let v = parseFloat(loanAmountEl.value) || 0;
+    v = Math.min(Math.max(v, 5000), 150000);
+    loanSliderEl.value = v;
+    setSliderFill(loanSliderEl);
+    calculate();
+  });
+
+  /* Rate slider/input sync */
+  rateSliderEl.addEventListener('input', () => {
+    rateEl.value = rateSliderEl.value;
+    setSliderFill(rateSliderEl);
+    calculate();
+  });
+  rateEl.addEventListener('input', () => {
+    let v = parseFloat(rateEl.value) || 0;
+    v = Math.min(Math.max(v, 3), 20);
+    rateSliderEl.value = v;
+    setSliderFill(rateSliderEl);
+    calculate();
+  });
+
+  loanTermEl.addEventListener('change', calculate);
+  balloonEl.addEventListener('input', calculate);
+
+  /* Frequency toggle */
+  document.querySelectorAll('.freq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFreq = btn.dataset.freq;
+      calculate();
+    });
+  });
+
+  /* Init */
+  setSliderFill(loanSliderEl);
+  setSliderFill(rateSliderEl);
+  calculate();
+</script>
+
+</body>
+</html>
