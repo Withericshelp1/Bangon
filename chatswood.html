@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Broker Chatswood | Home & Investment Loans | Bang On Investments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #E8732A;
+      --orange-dark: #C95E1A;
+      --dark: #1C1C1E;
+      --text: #333333;
+      --muted: #666666;
+      --light-bg: #F8F7F5;
+      --border: #E0E0E0;
+      --footer-bg: #252527;
+      --white: #ffffff;
+    }
+
+    body { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: var(--text); line-height: 1.7; }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 52px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); background: rgba(232,115,42,0.06); }
+    .nav-links .nav-has-arrow::after { content: ' \25BE'; font-size: 10px; opacity: 0.6; }
+    .nav-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 230px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+      padding: 6px 0;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      background: none;
+      border-radius: 0;
+    }
+    .dropdown-menu a:hover { background: rgba(232,115,42,0.06); color: var(--orange); }
+    .dropdown-menu a::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .dropdown-menu a:hover::before { background: var(--orange); }
+    .nav-links a.active { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 480px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Aerial_View_Chatswood_to_Sydney_CBD.jpg') center 45% / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(20,20,20,0.20) 0%, rgba(20,20,20,0.82) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px 56px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(232,115,42,0.85);
+      border-radius: 3px;
+      padding: 5px 13px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(26px, 3.8vw, 44px);
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 760px;
+      margin-bottom: 14px;
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* ── SHARED ── */
+    .section-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 28px);
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    /* ── DUAL CTA BUTTONS ── */
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .cta-buttons.centered { justify-content: center; }
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: var(--white) !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 13px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      box-shadow: 0 3px 10px rgba(232,115,42,0.30);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-call svg { color: var(--white) !important; flex-shrink: 0; }
+    .btn-call:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(232,115,42,0.38); }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: 2px solid var(--dark);
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-contact:hover { background: var(--dark); color: var(--white); transform: translateY(-2px); }
+    .final-cta .btn-call { background: var(--dark); box-shadow: none; }
+    .final-cta .btn-call:hover { background: #000; }
+    .final-cta .btn-contact { border-color: var(--white); color: var(--white); background: transparent; }
+    .final-cta .btn-contact:hover { background: var(--white); color: var(--dark); }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--dark);
+      padding: 22px 24px;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .stat-desc {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+    }
+
+    /* ── INTRO ── */
+    .intro-section { background: var(--white); padding: 64px 24px; }
+    .intro-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 60px;
+      align-items: start;
+    }
+    .intro-body .section-h2 { margin-bottom: 20px; }
+    .intro-body p {
+      font-size: 15.5px;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+    .intro-body p:last-of-type { margin-bottom: 0; }
+    .intro-image img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .intro-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,115,42,0.10);
+      border: 1px solid rgba(232,115,42,0.30);
+      border-radius: 40px;
+      padding: 8px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      padding: 44px 24px;
+      border-left: 5px solid var(--orange);
+      background: var(--light-bg);
+    }
+    .pull-quote.right {
+      border-left: none;
+      border-right: 5px solid var(--orange);
+      text-align: right;
+      background: var(--white);
+    }
+    .pull-quote-inner { max-width: 860px; margin: 0 auto; }
+    .pull-quote blockquote {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17.5px;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.55;
+      font-style: italic;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 12px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: normal;
+    }
+    .stars { color: var(--orange); letter-spacing: 2px; }
+
+    /* ── SERVICES OFFERED ── */
+    .what-we-offer { background: var(--light-bg); padding: 64px 24px; }
+    .what-we-offer .section-h2 { margin-bottom: 8px; }
+    .offer-intro {
+      font-size: 15.5px;
+      color: var(--text);
+      margin: 12px 0 28px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .offer-list {
+      max-width: 1200px;
+      margin: 0 auto;
+      list-style: none;
+    }
+    .offer-list li {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .offer-list li:first-child { border-top: 1px solid var(--border); }
+    .offer-num {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .offer-text { flex: 1; }
+    .offer-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .offer-text p {
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .offer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--orange);
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .offer-cta:hover { opacity: 0.75; text-decoration: underline; }
+
+    /* ── LOCAL KNOWLEDGE ── */
+    .local-section { background: var(--white); padding: 64px 24px; }
+    .local-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .local-body .section-h2 { margin-bottom: 18px; }
+    .local-body p { font-size: 15.5px; color: var(--text); line-height: 1.75; margin-bottom: 16px; }
+    .suburb-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 24px;
+    }
+    .suburb-tags span {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13.5px;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .local-sidebar {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 32px;
+    }
+    .local-sidebar h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .local-sidebar ul { list-style: none; }
+    .local-sidebar ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .local-sidebar ul li:last-child { border-bottom: none; }
+    .local-sidebar ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ── FAQs ── */
+    .faqs { background: var(--light-bg); padding: 64px 24px; }
+    .faqs-inner { max-width: 860px; margin: 0 auto; }
+    .faqs-inner .section-h2 { margin-bottom: 32px; }
+    details { border-bottom: 1px solid var(--border); }
+    details:first-of-type { border-top: 1px solid var(--border); }
+    summary {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--orange); flex-shrink: 0; line-height: 1; }
+    details[open] summary::after { content: '\2212'; }
+    .faq-body { font-size: 15px; color: var(--muted); line-height: 1.7; padding-bottom: 18px; }
+
+    /* ── FINAL CTA ── */
+    .final-cta { background: var(--orange); padding: 64px 24px; }
+    .final-cta-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+    .final-cta h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(24px, 4vw, 36px);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .final-cta p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer { background: var(--footer-bg); padding: 20px 24px; }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.5); }
+    .footer-legal { font-size: 12.5px; color: rgba(255,255,255,0.5); display: flex; gap: 16px; align-items: center; }
+    .footer-legal a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-legal a:hover { color: var(--orange); }
+    a.inline-link { color: var(--orange); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(232,115,42,0.35); }
+    a.inline-link:hover { border-bottom-color: var(--orange); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .intro-image { display: none; }
+      .local-inner { grid-template-columns: 1fr; }
+      .stats-inner { justify-content: center; gap: 24px; }
+    }
+    @media (max-width: 680px) {
+      .hero { height: 520px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="https://www.bangoninvestments.com.au/wp-content/uploads/2022/06/bang-on-investments-logo-main.png" alt="Bang On Investments">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/information" class="nav-has-arrow">Information</a></li>
+      <li class="nav-dropdown">
+        <a href="/services" class="nav-has-arrow">Our Services</a>
+        <div class="dropdown-menu">
+          <a href="home-loans.html">Home Loans</a>
+          <a href="investment-loans.html">Investment Loans</a>
+          <a href="business-loans.html">Business Loans</a>
+          <a href="vehicle-loans.html">Vehicle Loans</a>
+          <a href="refinancing.html">Refinancing</a>
+          <a href="commercial-property-loans.html">Commercial Property Loans</a>
+          <a href="self-employed-home-loans.html">Self-Employed Home Loans</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="medical-loans.html" class="nav-has-arrow">Medical Professionals</a>
+        <div class="dropdown-menu">
+          <a href="medical-loans.html">Medical Loans Overview</a>
+          <a href="home-loans-for-doctors.html">Home Loans for Doctors</a>
+          <a href="nurses-home-loans.html">Home Loans for Nurses</a>
+          <a href="lmi-waiver.html">LMI Waiver</a>
+          <a href="medical-business-loans.html">Business Finance</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/tools" class="nav-has-arrow">Tools</a>
+        <div class="dropdown-menu">
+          <a href="vehicle-loan-repayment-calculator.html">Vehicle Loan Calculator</a>
+          <a href="commercial-finance-calculator.html">Commercial Finance Calculator</a>
+        </div>
+      </li>
+      <li><a href="/contact" class="nav-has-arrow">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Local Mortgage Broker — Chatswood NSW 2067
+    </div>
+    <h1>Mortgage Broker in Chatswood — Home Loans, Investment & Business Finance</h1>
+    <p class="hero-sub">Bang On Investments helps Chatswood residents and property buyers access the right loan from 25+ lenders. Whether you're buying your first home, growing a portfolio or refinancing, we handle it all — at no cost to you.</p>
+    <div class="cta-buttons">
+      <a href="/contact-us/" class="btn-call">Get a Free Consultation</a>
+      <a href="tel:+61414406887" class="btn-contact" style="border-color:rgba(255,255,255,0.7);color:#fff;background:rgba(255,255,255,0.12);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS STRIP ── -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">25+</span>
+      <span class="stat-desc">Lenders compared</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">20+</span>
+      <span class="stat-desc">Years experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">$1B+</span>
+      <span class="stat-desc">In loans written</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">1,000+</span>
+      <span class="stat-desc">Clients helped</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">$0</span>
+      <span class="stat-desc">Cost to you</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── INTRO ── -->
+<section class="intro-section">
+  <div class="intro-grid">
+    <div class="intro-body">
+      <div class="intro-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Serving Chatswood &amp; the Upper North Shore
+      </div>
+      <h2 class="section-h2">Your Local Finance Expert in Chatswood</h2>
+      <p>Chatswood is one of Sydney's most dynamic property markets — a suburb that blends premium residential living with one of the North Shore's strongest commercial and retail precincts. With excellent transport links via the Chatswood Metro and T1 train line, and a growing pipeline of new developments, it continues to attract professionals, families and investors alike.</p>
+      <p>At Bang On Investments, we work with buyers and owners across Chatswood and the wider Upper North Shore. We understand the local market — from the prestige family homes on the quieter streets north of Fullers Road, to the growing apartment market closer to the station and the Chatswood Chase precinct. Median house prices here sit around $3.5 million, and getting the right loan structure from the outset makes a real difference.</p>
+      <p>We compare options from 25+ lenders — major banks, non-bank lenders and specialist providers — to find the most competitive rate and structure for your situation. And because we're paid by the lender, not you, our service is completely free.</p>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+        <a href="mailto:support@bangoninvestments.com.au" class="btn-contact">Email Us</a>
+      </div>
+    </div>
+    <div class="intro-image">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHQXjqs36HAxg0Q3wEgbXV9lUYwPhi1MZacXQFOfzoattAzlx70HTIhrotr4gxqWThZ9LzDsFSY-7eFN4myVlQIidnizdt3LrgnCAPRyn_pebMPvDgyQn8VUEXR_n2yvkRVWMnBRA=w1200-h800-k-no" alt="Chatswood NSW street view">
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE 1 ── -->
+<section class="pull-quote">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang helped make the entire experience feel less painful. Their knowledge was second to none and the customer service was excellent. Highly recommended."</blockquote>
+    <cite>Josh R &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── SERVICES OFFERED ── -->
+<section class="what-we-offer">
+  <div class="section-wrap">
+    <h2 class="section-h2">How We Help Chatswood Clients</h2>
+    <p class="offer-intro">Whether you're buying, investing, refinancing or financing a business in Chatswood, we have the lender relationships and local knowledge to find the right solution.</p>
+  </div>
+  <ul class="offer-list">
+    <li>
+      <span class="offer-num">1</span>
+      <span class="offer-text">
+        <strong>Home Loans in Chatswood</strong>
+        <p>Chatswood's property market requires careful loan structuring — particularly for buyers entering at the $2M+ price point. We work with lenders who understand high-value residential lending on the North Shore, and secure fully assessed <a href="home-loans.html" class="inline-link">pre-approvals</a> so you can bid at auction with confidence. Whether it's a freestanding home, a terrace or a prestige apartment, we'll find the most competitive rate and right loan features for your situation.</p>
+        <a href="tel:+61414406887" class="offer-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Discuss your home loan — call 0414 406 887
+        </a>
+      </span>
+    </li>
+    <li>
+      <span class="offer-num">2</span>
+      <span class="offer-text">
+        <strong>Investment Property Loans</strong>
+        <p>Chatswood offers strong fundamentals for property investors — consistent rental demand driven by proximity to the CBD, major transport links, and a growing professional tenant base. We structure <a href="investment-loans.html" class="inline-link">investment loans</a> to maximise your borrowing capacity and portfolio flexibility, including interest-only options, stand-alone securities and loan designs that complement your broader tax strategy.</p>
+        <a href="tel:+61414406887" class="offer-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Talk investment strategy — call 0414 406 887
+        </a>
+      </span>
+    </li>
+    <li>
+      <span class="offer-num">3</span>
+      <span class="offer-text">
+        <strong>Refinancing</strong>
+        <p>If you bought in Chatswood a few years ago, chances are your current rate is no longer competitive. We run a full market comparison against 25+ lenders and handle the entire <a href="refinancing.html" class="inline-link">refinancing process</a> — paperwork, discharge and all — to make switching straightforward. Many clients reduce their rate without extending their loan term.</p>
+        <a href="tel:+61414406887" class="offer-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Find out if you can save on your mortgage — call 0414 406 887
+        </a>
+      </span>
+    </li>
+    <li>
+      <span class="offer-num">4</span>
+      <span class="offer-text">
+        <strong>Medical Professional Home Loans</strong>
+        <p>Chatswood sits close to Royal North Shore Hospital and a large concentration of medical specialists, GPs and allied health professionals. If you're a doctor, dentist, pharmacist or other registered practitioner, you may qualify for specialist <a href="home-loans-for-doctors.html" class="inline-link">Medico home loan packages</a> — including LMI waivers up to 90–95% LVR that can save $15,000–$40,000+ on your purchase. We have a unique background in both medicine and finance.</p>
+        <a href="tel:+61414406887" class="offer-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Check your LMI waiver eligibility — call 0414 406 887
+        </a>
+      </span>
+    </li>
+    <li>
+      <span class="offer-num">5</span>
+      <span class="offer-text">
+        <strong>Self-Employed Home Loans</strong>
+        <p>Chatswood has a large and growing community of business owners, consultants and self-employed professionals. If your income doesn't fit a standard payslip-based assessment, we specialise in <a href="self-employed-home-loans.html" class="inline-link">self-employed home loans</a> — including low-doc and alt-doc products where lenders assess your financials differently. We know which lenders are flexible and which to avoid.</p>
+        <a href="tel:+61414406887" class="offer-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Self-employed? Call 0414 406 887
+        </a>
+      </span>
+    </li>
+    <li>
+      <span class="offer-num">6</span>
+      <span class="offer-text">
+        <strong>Business &amp; Commercial Finance</strong>
+        <p>Chatswood's strong commercial strip and retail precinct means many of our clients also need <a href="business-loans.html" class="inline-link">business loans</a>, equipment finance or <a href="commercial-property-loans.html" class="inline-link">commercial property lending</a>. Whether you're purchasing office or retail space, financing equipment, or looking for working capital, we access a wide panel of commercial lenders to match your business needs.</p>
+        <a href="tel:+61414406887" class="offer-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Discuss business finance — call 0414 406 887
+        </a>
+      </span>
+    </li>
+  </ul>
+</section>
+
+<!-- ── PULL QUOTE 2 ── -->
+<section class="pull-quote right">
+  <div class="pull-quote-inner">
+    <blockquote>"Bang and the team were so fantastic to work with. Their positivity, energy and professionalism made for a fantastic process and we felt supported every step of the way."</blockquote>
+    <cite>Xanthe L &nbsp;<span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite>
+  </div>
+</section>
+
+<!-- ── LOCAL KNOWLEDGE ── -->
+<section class="local-section">
+  <div class="local-inner">
+    <div class="local-body">
+      <h2 class="section-h2">Why Chatswood Buyers &amp; Investors Choose Bang On</h2>
+      <p>The Chatswood market moves quickly. Auction clearance rates on the Upper North Shore are consistently strong, and competition for quality stock — particularly family homes in the catchment for Monte Sant' Angelo, St Pius X College and Chatswood High — can be fierce. Having a broker who can turn around a fully assessed pre-approval quickly isn't just convenient, it's a competitive advantage.</p>
+      <p>We serve clients throughout Chatswood and the surrounding suburbs — including Willoughby, Artarmon, Lane Cove, Roseville and North Sydney. If you're considering expanding into other North Shore locations, we can help with finance across the full Upper North Shore corridor.</p>
+      <div class="suburb-tags">
+        <span>Chatswood</span>
+        <span>Willoughby</span>
+        <span>Artarmon</span>
+        <span>Lane Cove</span>
+        <span>Roseville</span>
+        <span>North Sydney</span>
+        <span>Lindfield</span>
+        <span>Killara</span>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+61414406887" class="btn-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0414 406 887
+        </a>
+        <a href="mailto:support@bangoninvestments.com.au" class="btn-contact">Email Us</a>
+      </div>
+    </div>
+    <div class="local-sidebar">
+      <h3>Why Choose Bang On Investments?</h3>
+      <ul>
+        <li>25+ lenders compared — banks, non-banks &amp; specialist providers</li>
+        <li>Fully assessed pre-approvals, not just indicatives</li>
+        <li>Unique background in medicine &amp; finance</li>
+        <li>Deep knowledge of high-value North Shore lending</li>
+        <li>Specialist expertise in Medico, self-employed &amp; investment structuring</li>
+        <li>20+ years experience, $1B+ in loans written</li>
+        <li>Complete service from first enquiry through to settlement</li>
+        <li>No cost to you — paid by the lender</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQs ── -->
+<section class="faqs">
+  <div class="faqs-inner">
+    <h2 class="section-h2">Chatswood Mortgage FAQ</h2>
+
+    <details>
+      <summary>What are typical property prices in Chatswood?</summary>
+      <div class="faq-body">Chatswood's median house price sits around $3.5 million, reflecting its premium position on Sydney's Upper North Shore. Apartments — particularly those in newer developments near the station — typically range from $900,000 to $2M+ depending on size and aspect. Loan structures for high-value property require careful thought, and getting the right lender match is critical. We work with lenders experienced in this price bracket.</div>
+    </details>
+
+    <details>
+      <summary>Is Chatswood a good area for property investment?</summary>
+      <div class="faq-body">Chatswood offers strong investment fundamentals. The suburb benefits from excellent transport infrastructure (direct Metro access to the CBD and wider network), a diverse population, a major retail and commercial hub, and ongoing residential development. Rental demand is consistently strong, particularly for apartments near the station. As with any Sydney market, the right loan structure — including interest-only options and optimal LVR — makes a significant difference to investment returns.</div>
+    </details>
+
+    <details>
+      <summary>Can you help with high-value home loans in Chatswood?</summary>
+      <div class="faq-body">Yes. Loans above $2M or $3M are assessed differently by lenders — serviceability calculations, LVR limits and security requirements all change at higher price points. We regularly arrange finance for high-value properties across the North Shore and have established relationships with lenders experienced in this segment, including private banks and specialist high-LVR products.</div>
+    </details>
+
+    <details>
+      <summary>Do you help first home buyers in Chatswood?</summary>
+      <div class="faq-body">Chatswood's price point puts houses out of reach for many first home buyers, but apartments in the area are more accessible — and there are first home buyer stamp duty concessions available on purchases below certain thresholds. We work with first home buyers to maximise borrowing capacity, identify applicable government schemes and find lenders with the lowest upfront costs. It's worth having a conversation about what's possible before ruling anything out.</div>
+    </details>
+
+    <details>
+      <summary>How quickly can you arrange a pre-approval for a Chatswood property?</summary>
+      <div class="faq-body">We aim to turn around fully assessed pre-approvals within 2–5 business days in most cases, depending on lender and the complexity of your situation. The North Shore auction market moves fast — having a pre-approval in place before you begin inspecting is strongly recommended. Contact us early so we can prepare everything before you need it.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Buying, Investing or Refinancing in Chatswood?</h2>
+    <p>Get a free, no-obligation consultation with Bang On Investments. We'll compare your options across 25+ lenders and find the right loan for your situation — at no cost to you.</p>
+    <div class="cta-buttons centered">
+      <a href="tel:+61414406887" class="btn-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0414 406 887
+      </a>
+      <a href="mailto:support@bangoninvestments.com.au" class="btn-contact">Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 Bang On Investments | All Rights Reserved</span>
+    <div class="footer-legal">
+      <span>Australian Credit Licence No. 394371</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
