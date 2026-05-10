@@ -1,0 +1,16 @@
+{
+  "name": "melville-ceilings-audit",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "audit": "node spacing-audit.mjs",
+    "upload": "node upload-to-sheets.mjs",
+    "start": "node run-full-audit.mjs"
+  },
+  "dependencies": {
+    "googleapis": "^118.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

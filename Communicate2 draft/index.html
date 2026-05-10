@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speech Pathologist Adelaide Hills | Communicate!</title>
+  <meta name="description" content="Communicate Speech, Language & Literacy Intervention delivers Adelaide Hills speech pathology, autism assessment, literacy and voice therapy. Book your appointment now." />
+  <link rel="canonical" href="https://example.com/" />
+  <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Communicate Speech, Language & Literacy Intervention",
+    "description": "Speech pathology clinic in Adelaide Hills offering autism assessment, language therapy, stuttering treatment, swallowing services.",
+    "url": "https://example.com/",
+    "telephone": "+61 433 763 055",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "126 Princes Hwy",
+      "addressLocality": "Littlehampton",
+      "addressRegion": "SA",
+      "postalCode": "5250",
+      "addressCountry": "AU"
+    },
+    "openingHours": ["Mo-Fr 09:00-17:00"],
+    "areaServed": ["Adelaide Hills","Montacute","Mylor","Hahndorf","Mount Barker"]
+  }
+  </script>
+  <style>
+    :root {
+      --primary: #6D2E9D;
+      --primary-dark: #4D1E72;
+      --secondary: #35B773;
+      --accent: #FFC440;
+      --accent-soft: #FAD393;
+      --background: #FCF7FF;
+      --surface: #FFFFFF;
+      --text: #231E2A;
+      --muted: #637282;
+      --border: #E2D9E9;
+      --shadow: 0 16px 28px rgba(61, 26, 71, 0.24);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', 'Calibri', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--cream);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .site {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.56rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--primary-dark); }
+
+    .cta-top {
+      background: var(--secondary);
+      border-radius: 999px;
+      color: #fff;
+      border: 0;
+      font-weight: 700;
+      padding: 0.65rem 1.05rem;
+      box-shadow: 0 6px 16px rgba(54, 32, 94, 0.42);
+    }
+
+    main { flex: 1; }
+
+    .hero {
+      position: relative;
+      background: url('https://images.pexels.com/photos/7521312/pexels-photo-7521312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1600') center/cover no-repeat;
+      color: #fff;
+      min-height: 65vh;
+      display: grid;
+      place-items: center;
+      padding: 2.5rem 1rem;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 820px;
+      padding: 1.3rem;
+      backdrop-filter: blur(3px);
+      background: rgba(11, 38, 35, 0.45);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 1rem;
+      box-shadow: var(--shadow);
+      animation: fadeInUp .8s ease both;
+    }
+
+    .hero h1 { font-size: clamp(2rem, 6vw, 3.4rem); margin: 0.2rem 0; line-height: 1.1; }
+    .hero p { margin: 1rem 0 1.5rem; color: #e4f2ee; font-size: 1.1rem; }
+
+    .hero-actions { display: inline-flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      border: 0;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 0.8rem 1.2rem;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+    .btn-primary { background: var(--secondary); color: #fff; box-shadow: 0 10px 20px rgba(53, 183, 115, 0.35); }
+    .btn-secondary { background: rgba(255,255,255,.18); color: #fff; border: 1px solid rgba(255,255,255,.35); }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    section { width: min(1100px, 92%); margin: 3rem auto; }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--primary-dark);
+      font-size: clamp(1.65rem, 3.2vw, 2.2rem);
+      letter-spacing: 0.005em;
+    }
+
+    .section-heading small { color: var(--muted); }
+
+    .card-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
+
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1.2rem;
+      box-shadow: 0 10px 20px rgba(9, 24, 21, 0.06);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .card:hover { transform: translateY(-6px); box-shadow: 0 17px 25px rgba(11, 36, 33, 0.17); }
+
+    .card h3 { margin-top: 0; color: var(--primary); }
+    .card p { margin: .68rem 0 1rem; color: var(--muted); }
+
+    .block-cta { margin-top: 1rem; display: flex; justify-content: flex-end; }
+
+    .edit-block {
+      background: rgba(109, 46, 157, 0.08);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px dashed rgba(77, 30, 114, 0.3);
+      margin-top: 1.5rem;
+    }
+
+    .concern-cards { background: #fff; border-radius: 1rem; border: 1px solid var(--border); }
+    .concern-cards .card { box-shadow: none; border: 0; }
+
+    .image-gallery {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(9, 24, 21, 0.12);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 20px 32px rgba(11, 36, 33, 0.2); }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26, 13, 51, 0.68);
+      color: #fff;
+      padding: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .faq dt { font-weight: 700; color: var(--primary); cursor: pointer; margin: 0.8rem 0 0.4rem; }
+    .faq dd { margin: 0; padding-left: 1rem; color: var(--muted); max-height: 0; overflow: hidden; transition: max-height .28s ease; }
+    .faq .open dd { max-height: 120px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 400px);
+      gap: 1.3rem;
+    }
+
+    .contact-form {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      border: 1px solid #d5e0db;
+      border-radius: 0.6rem;
+      padding: 0.75rem;
+      margin: 0.5rem 0 1rem;
+      font-size: 0.96rem;
+      color: #21493b;
+    }
+
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+
+    .contact-info-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .contact-info-card .info-row { display: flex; align-items: center; gap: 0.65rem; font-size: .95rem; color: var(--primary); }
+
+    footer {
+      background: var(--primary-dark);
+      color: #F6EDFF;
+      padding: 2.3rem 1rem 1.6rem;
+      margin-top: 2.5rem;
+    }
+
+    footer .footer-inner { width: min(1100px, 92%); margin: 0 auto; display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); }
+
+    footer a { color: #E8D8FF; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 860px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      header .nav-inner { justify-content: space-between; }
+    }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <nav class="nav-inner" aria-label="Main navigation">
+        <div class="logo" aria-label="Communicate logo">
+          <img src="https://media-manager-c.questera.ai/greta-media/ce401a9fb1bead04c2778a5464d70ee6e82936753d48003d68ef589fcdf9bdaf6f76563944b81746265630513545384b/images/aW1hZ2UvcG5n/ae8ff41779fc2b1ab35302613e551d29.png" alt="Communicate Speech Pathology Logo" />
+        </div>
+        <div class="nav-links" role="menubar">
+          <a href="#services" role="menuitem">Services</a>
+          <a href="#concerns" role="menuitem">Areas</a>
+          <a href="#faq" role="menuitem">FAQs</a>
+          <a href="#contact" role="menuitem">Contact</a>
+        </div>
+        <a class="cta-top" href="#contact">Book Appointment</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Hero section">
+        <div class="hero-content">
+          <p><strong>Adelaide Hills Private Speech Pathology Clinic</strong></p>
+          <h1>Speech Pathologist Adelaide Hills</h1>
+          <p>Qualified assessment and diagnosis for Autism Spectrum Disorder, speech, language, voice, literacy and swallowing challenges in Littlehampton and all surrounding areas.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get in Touch Today</a>
+            <a href="tel:+61433763055" class="btn btn-secondary">Call 0433 763 055</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="section-heading"><h2>Main Services</h2><small>Comprehensive clinical assessments & therapy</small></div>
+        <div class="card-grid">
+          <article class="card" aria-label="Language delays">
+            <h3>Language Delays</h3>
+            <p>Support for understanding and using language effectively in children and teens.</p>
+            <a href="#contact" class="btn btn-primary" style="font-size:.85rem;">Book for Language</a>
+          </article>
+          <article class="card" aria-label="Speech disorders">
+            <h3>Speech Disorders</h3>
+            <p>Improved clarity, articulation and phonetic growth for all ages.</p>
+            <a href="#contact" class="btn btn-primary" style="font-size:.85rem;">Schedule Speech Review</a>
+          </article>
+          <article class="card" aria-label="Literacy difficulties">
+            <h3>Literacy Difficulties</h3>
+            <p>Tailored help with reading, spelling and phonics for school work.</p>
+            <a href="#contact" class="btn btn-primary" style="font-size:.85rem;">Start Literacy Plans</a>
+          </article>
+          <article class="card" aria-label="Autism spectrum">
+            <h3>Autism Spectrum</h3>
+            <p>Qualified assessment and communication support for ASD needs.</p>
+            <a href="#contact" class="btn btn-primary" style="font-size:.85rem;">Autism Assessment</a>
+          </article>
+          <article class="card" aria-label="Adult swallowing">
+            <h3>Adult Swallowing</h3>
+            <p>Expert dysphagia assessment and strategies for safe eating and drinking.</p>
+            <a href="#contact" class="btn btn-primary" style="font-size:.85rem;">Book Swallowing Help</a>
+          </article>
+          <article class="card" aria-label="Voice & stuttering">
+            <h3>Voice &amp; Stuttering</h3>
+            <p>Fluency and voice therapy to improve comfort, confidence and function.</p>
+            <a href="#contact" class="btn btn-primary" style="font-size:.85rem;">Arrange Assessment</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="therapy">
+        <div class="section-heading"><h2>Therapy in Action</h2><small>Real sessions helping children communicate confidently</small></div>
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/7521312/pexels-photo-7521312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1600" alt="Speech therapy session with child and therapist" />
+            <div class="gallery-caption">Warm, real-world therapy in action</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.squarespace-cdn.com/content/v1/61b37e928ac68e208ed42f14/1639177730749-2M3DBCY2B4PXBLYCT4OG/shutterstock_1816846706.jpg" alt="Child and therapist at table using learning tools" />
+            <div class="gallery-caption">Practical techniques for confidence and fluency</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://speechandautism.ca/wp-content/uploads/2025/04/woman-doing-speech-therapy-with-little-blonde-boy-1-scaled-1.jpg" alt="Speech pathologist working with young boy on communication skills" />
+            <div class="gallery-caption">Professional care and expertise</div>
+          </div>
+        </div>
+        <div class="block-cta" style="justify-content:center; margin-top: 2rem;">
+          <a class="btn btn-primary" href="#contact">Start Your Child's Journey</a>
+        </div>
+      </section>
+
+      <section id="concerns">
+        <div class="section-heading"><h2>Areas of Concern</h2><small>Support for children, adolescents & adults</small></div>
+        <div class="concern-cards card-grid">
+          <div class="card"><h3>Children</h3><ul><li>Not speaking by age 2, hard to understand.</li><li>Language delay or poor literacy skills.</li><li>Social and learning communication challenges.</li></ul><div class="block-cta"><a class="btn btn-primary" href="#contact">Child Screening</a></div></div>
+          <div class="card"><h3>Adolescents</h3><ul><li>Difficulty with school language, reading comprehension.</li><li>Struggling with planning or following complex instructions.</li><li>Stuttering or voice issues harming confidence.</li></ul><div class="block-cta"><a class="btn btn-primary" href="#contact">Teen Support</a></div></div>
+          <div class="card"><h3>Adults</h3><ul><li>Voice strain, unclear speech, post-illness recovery.</li><li>Swallowing safety, late diagnosis ASD, workplace communication.</li><li>Relationship between cognition and speech/voice.</li></ul><div class="block-cta"><a class="btn btn-primary" href="#contact">Adult Care</a></div></div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="section-heading"><h2>FAQ’s</h2><small>Common questions about our speech pathology services</small></div>
+        <dl class="faq">
+          <dt tabindex="0">What is a speech pathologist?</dt>
+          <dd>A speech pathologist is a clinically trained health professional who assesses, diagnoses and treats communication and swallowing issues for all ages.</dd>
+          <dt tabindex="0">What is the difference between a speech pathologist and a speech therapist?</dt>
+          <dd>Both terms are used, but a speech pathologist is a university-qualified practitioner often with clinical credentials and broader scope.</dd>
+          <dt tabindex="0">How do I know if my child needs a speech pathologist?</dt>
+          <dd>If language growth is behind peers, your child avoids talking, or has difficulty with reading or social communication, assessment is recommended.</dd>
+          <dt tabindex="0">What are speech milestones for a child’s age?</dt>
+          <dd>Typical milestone guidance is: 12 months first words; 2 years word combinations; 4 years clear speech for strangers. Individual variation is normal.</dd>
+          <dt tabindex="0">How much does speech therapy cost?</dt>
+          <dd>Costs depend on service type (assessment, therapy, diagnosis). We provide a clear quote after a free initial consult call.</dd>
+          <dt tabindex="0">Do you bulk bill or accept Medicare?</dt>
+          <dd>We offer private billing. Some clients use NDIS or private health rebates when eligible.</dd>
+          <dt tabindex="0">Can I use NDIS funding for speech pathology?</dt>
+          <dd>Yes, we support NDIS participants with funded plans and report-writing on request.</dd>
+        </dl>
+        <div class="block-cta" style="justify-content:center;"><a class="btn btn-primary" href="#contact">Ask a Question</a></div>
+      </section>
+
+      <section id="contact">
+        <div class="section-heading"><h2>Book an Appointment</h2><small>Fast online bookings and phone consultation</small></div>
+        <div class="contact-grid">
+          <aside class="contact-info-card" aria-label="Contact details">
+            <div class="info-row"><strong>Office:</strong> 126 Princes Hwy, Littlehampton SA 5250</div>
+            <div class="info-row"><strong>Phone:</strong> <a href="tel:+61433763055">0433 763 055</a></div>
+            <div class="info-row"><strong>Hours:</strong> Mon-Fri 9am–5pm (after hours by negotiation)</div>
+            <div class="info-row"><strong>Session length:</strong> 45–60 mins.</div>
+            <div class="info-row"><strong>Pathways:</strong> in-clinic, home visit, telehealth.</div>
+
+            <div class="block-cta" style="justify-content:flex-start;"><a class="btn btn-secondary" href="#">Call to Book</a></div>
+          </aside>
+
+          <form class="contact-form" action="#" method="post" aria-label="Appointment form">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name" />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required placeholder="0433 763 055" />
+            <label for="service">Service interested in</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Language Delay</option>
+              <option>Speech Disorder</option>
+              <option>Autism Assessment</option>
+              <option>Adult Swallowing</option>
+              <option>Voice & Stuttering</option>
+            </select>
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" placeholder="Tell us about your needs"></textarea>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <h3>Communicate!</h3>
+          <p>Speech, Language & Literacy Intervention in Adelaide Hills. In-clinic, telehealth, schools and residential care.</p>
+        </div>
+        <div>
+          <h4>Quick links</h4>
+          <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#concerns">Areas</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>126 Princes Hwy, Littlehampton SA 5250</p>
+          <p><a href="tel:+61433763055">0433 763 055</a></p>
+          <p><a href="mailto:contact@communicateis.com.au">contact@communicateis.com.au</a></p>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1.2rem; color:#b7dbd3;">&copy; 2026 Communicate Speech, Language & Literacy Intervention. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq dt').forEach(function(dt) {
+      dt.addEventListener('click', function () {
+        dt.parentElement.classList.toggle('open');
+      });
+      dt.addEventListener('keypress', function (evt) { if (evt.key === 'Enter' || evt.key === ' ') dt.click(); });
+    });
+  </script>
+</body>
+</html>
